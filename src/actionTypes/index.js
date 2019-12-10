@@ -1,0 +1,33 @@
+// add new user
+export const ADD_NEW_USER_START = "ADD_NEW_USER_START"
+export const ADD_NEW_USER_SUCCESS = "ADD_NEW_USER_SUCCESS"
+export const ADD_NEW_USER_FAILURE = "ADD_NEW_USER_FAILURE"
+
+// login
+export const LOGIN_START = "LOGIN_START"
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS"
+export const LOGIN_FAILURE = "LOGIN_FAILURE"
+export const AUTHENTICATION_FAILURE = "AUTHENTICATION_FAILURE"
+
+// load class
+export const LOAD_CLASSES_START = "LOAD_CLASSES_START"
+export const LOAD_CLASSES_SUCCESS = "LOAD_CLASSES_SUCCESS"
+export const LOAD_CLASSES_FAILURE = "LOAD_CLASSES_FAILURE"
+
+// load class
+export const LOAD_EVENTS_START = "LOAD_EVENTS_START"
+export const LOAD_EVENTS_SUCCESS = "LOAD_EVENTS_SUCCESS"
+export const LOAD_EVENTS_FAILURE = "LOAD_EVENTS_FAILURE"
+
+// request class
+export const REQUEST_CLASS_START = "REQUEST_CLASS_START"
+export const REQUEST_CLASS_SUCCESS = "REQUEST_CLASS_SUCCESS"
+export const REQUEST_CLASS_FAILURE = "REQUEST_CLASS_FAILURE"
+
+
+// middleware actions
+export const API = "API"
+export const API_START = "API_START"
+export const API_END = "API_END"
+export const ACCESS_DENIED = "ACCESS_DENIED"
+export const API_ERROR = "API_ERROR"

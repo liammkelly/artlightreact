@@ -1,0 +1,1540 @@
+@font-face {
+  font-family: AvenirBook;
+  src: url(../fonts/Avenir-Book.ttf);
+}
+/* line 11, ../sass/main.scss */
+html,
+body {
+  margin: 0px;
+  font-size: 18px;
+}
+
+/* line 1, ../sass/foundation/_calendar.scss */
+#wrapper {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+/* line 7, ../sass/foundation/_calendar.scss */
+#wrapper IMG {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 14, ../sass/foundation/_calendar.scss */
+#wrapper #calendar_container {
+  float: left;
+  width: 100%;
+  overflow: scroll;
+}
+/* line 20, ../sass/foundation/_calendar.scss */
+#wrapper #calendar {
+  float: left;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  z-index: 100;
+  font-family: "AvenirBook";
+  color: #FFF;
+}
+/* line 31, ../sass/foundation/_calendar.scss */
+#wrapper #calendar .fc-today {
+  background-color: #03C;
+}
+/* line 35, ../sass/foundation/_calendar.scss */
+#wrapper #calendar .fc-event {
+  line-height: 1;
+  margin-bottom: 3px;
+  padding: 3px;
+}
+
+/* line 43, ../sass/foundation/_calendar.scss */
+#event-detail-popper {
+  background-color: white !important;
+  border: 2px solid #0929f3;
+  height: 160px;
+  width: 350px;
+  z-index: 10500;
+  padding: 10px;
+}
+/* line 51, ../sass/foundation/_calendar.scss */
+#event-detail-popper .event_details {
+  float: left;
+}
+/* line 54, ../sass/foundation/_calendar.scss */
+#event-detail-popper .event_details .detail_text {
+  float: left;
+  width: 95%;
+}
+/* line 58, ../sass/foundation/_calendar.scss */
+#event-detail-popper .event_details .detail_text .label {
+  float: left;
+  clear: left;
+  width: 70px;
+}
+/* line 63, ../sass/foundation/_calendar.scss */
+#event-detail-popper .event_details .detail_text .value {
+  float: left;
+  clear: right;
+}
+/* line 68, ../sass/foundation/_calendar.scss */
+#event-detail-popper .event_details .buttons {
+  float: right;
+  width: 5%;
+  padding: 0 0 0 12px;
+}
+/* line 73, ../sass/foundation/_calendar.scss */
+#event-detail-popper .event_details .buttons .link-icon {
+  margin: 14px 0;
+}
+
+/* line 80, ../sass/foundation/_calendar.scss */
+#mobile_event_container {
+  float: left;
+  width: 100%;
+  background-attachment: scroll;
+  background-image: url(/assets/images/mobile/calendartexture.jpg);
+  margin: 0 0 2rem;
+}
+/* line 87, ../sass/foundation/_calendar.scss */
+#mobile_event_container .mobile-date {
+  float: left;
+  width: 98%;
+  margin: 1rem 1% 0;
+  font-size: 2rem;
+  font-family: "AvenirBook";
+}
+/* line 95, ../sass/foundation/_calendar.scss */
+#mobile_event_container .mobile-event {
+  float: left;
+  width: 98%;
+  margin: 0 1%;
+  font-size: 2rem;
+  font-family: "AvenirBook";
+}
+/* line 103, ../sass/foundation/_calendar.scss */
+#mobile_event_container .mobile-date {
+  background-color: silver;
+}
+/* line 107, ../sass/foundation/_calendar.scss */
+#mobile_event_container .mobile-event {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 7px 10px;
+}
+
+/* line 1, ../sass/foundation/_classes.scss */
+.class {
+  width: 100%;
+  float: left;
+}
+/* line 5, ../sass/foundation/_classes.scss */
+.class img {
+  width: 100%;
+}
+/* line 9, ../sass/foundation/_classes.scss */
+.class a.link,
+.class a.link:visited {
+  color: #0929f3;
+}
+/* line 14, ../sass/foundation/_classes.scss */
+.class .details {
+  width: 97%;
+  margin: 0.6em 1.5% 1em;
+  float: left;
+  font-family: "AvenirBook";
+}
+/* line 20, ../sass/foundation/_classes.scss */
+.class .details .description {
+  float: left;
+  width: 80%;
+}
+/* line 24, ../sass/foundation/_classes.scss */
+.class .details .description .title {
+  font-weight: bold;
+}
+/* line 29, ../sass/foundation/_classes.scss */
+.class .details .register-class,
+.class .details .reschedule-class {
+  font-family: "AvenirBook";
+  font-size: 13px;
+  padding: 0.1em 0.4em;
+  white-space: nowrap;
+  margin: 0 0 0.2em 0;
+  clear: both;
+  color: #FFF;
+  background-color: #0929f3;
+}
+/* line 42, ../sass/foundation/_classes.scss */
+.class .details .action {
+  float: right;
+  width: 17%;
+  margin-left: 3%;
+}
+/* line 48, ../sass/foundation/_classes.scss */
+.class .details .show_hide {
+  color: #000;
+  text-decoration: none;
+  font-family: "AvenirBook";
+  font-size: 14px;
+  display: none;
+}
+/* line 56, ../sass/foundation/_classes.scss */
+.class .details .moretext {
+  display: block;
+}
+/* line 62, ../sass/foundation/_classes.scss */
+.class #music-class-form button,
+.class #music-class-form input {
+  font-size: 12px;
+}
+/* line 66, ../sass/foundation/_classes.scss */
+.class #music-class-form textarea {
+  width: 100%;
+  height: 5em;
+  border-color: #eeeeee;
+}
+
+/* EVENT STYLES */
+/* line 75, ../sass/foundation/_classes.scss */
+a.fc-day-grid-event,
+.polymer-clay-mandalas {
+  background-color: #FFF !important;
+  border: 1px solid transparent !important;
+  color: #000 !important;
+}
+
+/* line 82, ../sass/foundation/_classes.scss */
+.marzipan-animals {
+  background-color: #FFF !important;
+  border: 1px solid transparent !important;
+  color: #000 !important;
+}
+
+/* line 88, ../sass/foundation/_classes.scss */
+.book-club-with-a-twist {
+  background-color: #FFF !important;
+  border: 1px solid transparent !important;
+  color: #000 !important;
+}
+
+/* line 94, ../sass/foundation/_classes.scss */
+.get-lost-in-intuitive-painting {
+  background-color: #FFF !important;
+  border: 1px solid transparent !important;
+  color: #000 !important;
+}
+
+/* line 100, ../sass/foundation/_classes.scss */
+.beautify-your-home {
+  background-color: #FFF !important;
+  border: 1px solid transparent !important;
+  color: #000 !important;
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  /* line 110, ../sass/foundation/_classes.scss */
+  .class_rectangle {
+    display: none;
+  }
+
+  /* line 114, ../sass/foundation/_classes.scss */
+  .class .details {
+    width: 100%;
+    margin: 0;
+    line-height: 5.5rem;
+    font-size: 2.3rem;
+  }
+  /* line 120, ../sass/foundation/_classes.scss */
+  .class .details .show_hide_container {
+    line-height: 1rem;
+    margin: 0 0 80px;
+  }
+  /* line 124, ../sass/foundation/_classes.scss */
+  .class .details .show_hide_container .show_hide {
+    font-size: inherit;
+    color: #0929f3;
+    display: block;
+  }
+  /* line 131, ../sass/foundation/_classes.scss */
+  .class .details .moretext {
+    display: none;
+  }
+}
+/* desktop or tablet */
+/* line 1, ../sass/foundation/_feedback.scss */
+#feedback {
+  font-family: "AvenirBook";
+  width: 80%;
+  margin: 0 10% 30px;
+}
+/* line 6, ../sass/foundation/_feedback.scss */
+#feedback ul {
+  list-style-type: none;
+  list-style: none;
+  padding-left: 0;
+}
+/* line 12, ../sass/foundation/_feedback.scss */
+#feedback .starrr a {
+  color: #0929f3;
+}
+/* line 16, ../sass/foundation/_feedback.scss */
+#feedback textarea {
+  width: 100%;
+  height: 5em;
+  border-color: #eeeeee;
+}
+/* line 23, ../sass/foundation/_feedback.scss */
+#feedback table .classname {
+  width: 270px;
+}
+/* line 28, ../sass/foundation/_feedback.scss */
+#feedback #feedback_success {
+  display: none;
+  padding: 10px 0 0 40px;
+  color: #0929f3;
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  /* line 38, ../sass/foundation/_feedback.scss */
+  #feedback {
+    font-size: 2rem;
+    width: 100%;
+    margin: 0 0 80px;
+  }
+  /* line 44, ../sass/foundation/_feedback.scss */
+  #feedback table .classname {
+    width: 500px;
+  }
+  /* line 48, ../sass/foundation/_feedback.scss */
+  #feedback table .starrr a {
+    font-size: 2rem;
+    letter-spacing: 1rem;
+  }
+  /* line 55, ../sass/foundation/_feedback.scss */
+  #feedback textarea {
+    font-size: 2rem;
+  }
+}
+/* line 1, ../sass/foundation/_gallery.scss */
+#gallery {
+  width: 100%;
+  float: left;
+}
+/* line 5, ../sass/foundation/_gallery.scss */
+#gallery .gallery-row {
+  width: 100%;
+  float: left;
+}
+/* line 9, ../sass/foundation/_gallery.scss */
+#gallery .gallery-row img {
+  float: left;
+  clear: none;
+  width: 23.5%;
+  margin: 1%;
+}
+/* line 15, ../sass/foundation/_gallery.scss */
+#gallery .gallery-row img.top-row {
+  margin-top: 0 !important;
+}
+/* line 19, ../sass/foundation/_gallery.scss */
+#gallery .gallery-row img.first {
+  margin: 1% 1% 1% 0;
+}
+/* line 23, ../sass/foundation/_gallery.scss */
+#gallery .gallery-row img.last {
+  margin: 1% 0 1% 1%;
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  /* line 38, ../sass/foundation/_gallery.scss */
+  #gallery .gallery-row img {
+    width: 100%;
+    clear: both;
+    margin: 0 0 20px;
+  }
+  /* line 43, ../sass/foundation/_gallery.scss */
+  #gallery .gallery-row img.first {
+    margin: 0 0 20px;
+  }
+  /* line 47, ../sass/foundation/_gallery.scss */
+  #gallery .gallery-row img.last {
+    margin: 0 0 20px;
+  }
+}
+/* line 1, ../sass/foundation/_headerfooter.scss */
+#header,
+#footer {
+  float: left;
+  width: 97%;
+  text-align: center;
+  font-family: "AvenirBook";
+  font-size: 18px;
+}
+/* line 9, ../sass/foundation/_headerfooter.scss */
+#header .link,
+#header .separator,
+#footer .link,
+#footer .separator {
+  float: left;
+  color: #000;
+  margin: 2px 6px;
+}
+/* line 15, ../sass/foundation/_headerfooter.scss */
+#header .link a,
+#header .separator a,
+#footer .link a,
+#footer .separator a {
+  text-decoration: none;
+  color: #000;
+}
+/* line 19, ../sass/foundation/_headerfooter.scss */
+#header .link a.selected,
+#header .separator a.selected,
+#footer .link a.selected,
+#footer .separator a.selected {
+  color: #0929f3;
+}
+/* line 25, ../sass/foundation/_headerfooter.scss */
+#header #loginArea,
+#footer #loginArea {
+  float: right;
+  font-size: 1rem;
+}
+/* line 30, ../sass/foundation/_headerfooter.scss */
+#header .login-link,
+#footer .login-link {
+  float: right;
+}
+/* line 33, ../sass/foundation/_headerfooter.scss */
+#header .login-linka,
+#footer .login-linka {
+  margin: 2px 6px;
+  text-decoration: none;
+  color: #0929f3;
+}
+/* line 39, ../sass/foundation/_headerfooter.scss */
+#header .login-link span,
+#footer .login-link span {
+  color: #0929f3;
+}
+/* line 44, ../sass/foundation/_headerfooter.scss */
+#header #login-icon,
+#footer #login-icon {
+  float: right;
+  border: 0;
+  font-size: 1.2rem;
+  width: 30px;
+  color: #0929f3;
+}
+/* line 52, ../sass/foundation/_headerfooter.scss */
+#header #login-text,
+#footer #login-text {
+  margin: 2px 6px 2px 10px;
+}
+/* line 55, ../sass/foundation/_headerfooter.scss */
+#header #login-text a,
+#footer #login-text a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* line 62, ../sass/foundation/_headerfooter.scss */
+#header {
+  margin: 0.3% 1.5% 0;
+}
+
+/* line 67, ../sass/foundation/_headerfooter.scss */
+#footer {
+  padding: 50px 0;
+}
+/* line 71, ../sass/foundation/_headerfooter.scss */
+#footer a {
+  text-decoration: none;
+  color: #000;
+}
+/* line 75, ../sass/foundation/_headerfooter.scss */
+#footer a.selected {
+  color: #0929f3;
+}
+
+/* line 81, ../sass/foundation/_headerfooter.scss */
+#copyright {
+  text-align: center;
+  font-family: "AvenirBook";
+  border: 1px solid #0929f3;
+  border-width: 0 0 1px 0;
+  float: left;
+  width: 80%;
+  margin: 25px 10% 0;
+  padding: 0 0 25px;
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  /* line 96, ../sass/foundation/_headerfooter.scss */
+  #header {
+    width: 90%;
+    margin: 2% 5%;
+  }
+  /* line 100, ../sass/foundation/_headerfooter.scss */
+  #header #loginArea {
+    float: right;
+    color: #0929f3 !important;
+  }
+  /* line 105, ../sass/foundation/_headerfooter.scss */
+  #header #login-icon {
+    float: right;
+    border: 0;
+    width: 2rem;
+    margin-right: 1rem;
+  }
+  /* line 111, ../sass/foundation/_headerfooter.scss */
+  #header #login-icon a {
+    text-decoration: none;
+    color: #0929f3;
+    font-size: 3rem;
+    margin-top: 3px;
+  }
+  /* line 119, ../sass/foundation/_headerfooter.scss */
+  #header #login-text {
+    margin: 2px 6px;
+  }
+  /* line 122, ../sass/foundation/_headerfooter.scss */
+  #header #login-text a {
+    text-decoration: none;
+    font-size: 3rem;
+  }
+  /* line 129, ../sass/foundation/_headerfooter.scss */
+  #header .login-link span {
+    color: #0929f3;
+  }
+
+  /* line 137, ../sass/foundation/_headerfooter.scss */
+  #footer {
+    font-size: 2.3rem;
+    margin: 0 10%;
+    width: 80%;
+  }
+  /* line 142, ../sass/foundation/_headerfooter.scss */
+  #footer a {
+    font-size: 2.3rem;
+  }
+
+  /* line 147, ../sass/foundation/_headerfooter.scss */
+  #copyright {
+    width: 100%;
+    font-size: 2.3rem;
+    background-color: #ededed;
+    padding: 120px 10%;
+    margin: 0;
+    border-width: 0;
+    line-height: 5.5rem;
+    font-size: 2.3rem;
+  }
+  /* line 157, ../sass/foundation/_headerfooter.scss */
+  #copyright a {
+    font-size: 2.3rem;
+  }
+}
+/* line 2, ../sass/foundation/_login.scss */
+#header #loginArea {
+  float: right;
+  font-size: 1rem;
+}
+/* line 7, ../sass/foundation/_login.scss */
+#header .login-link {
+  float: right;
+}
+/* line 10, ../sass/foundation/_login.scss */
+#header .login-linka {
+  margin: 2px 6px;
+  text-decoration: none;
+  color: #0929f3;
+}
+/* line 16, ../sass/foundation/_login.scss */
+#header .login-link span {
+  color: #0929f3;
+}
+/* line 21, ../sass/foundation/_login.scss */
+#header #login-icon {
+  float: right;
+  border: 0;
+  font-size: 1.2rem;
+  width: 30px;
+  color: #0929f3;
+}
+/* line 29, ../sass/foundation/_login.scss */
+#header #login-text {
+  margin: 2px 6px 2px 10px;
+}
+/* line 32, ../sass/foundation/_login.scss */
+#header #login-text a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* line 39, ../sass/foundation/_login.scss */
+#close-button {
+  float: right;
+  clear: none;
+  margin: 10px 20px 0 0;
+}
+/* line 44, ../sass/foundation/_login.scss */
+#close-button a {
+  color: white;
+  font-size: 4rem;
+}
+
+/* line 50, ../sass/foundation/_login.scss */
+#login-page {
+  font-family: "AvenirBook";
+  color: white;
+  float: left;
+  width: 100%;
+}
+/* line 56, ../sass/foundation/_login.scss */
+#login-page #login-form,
+#login-page #register-form {
+  margin: 0;
+}
+/* line 60, ../sass/foundation/_login.scss */
+#login-page #login-form .header,
+#login-page #register-form .header {
+  width: 76%;
+  margin: 0 12% 30px;
+  font-size: 42px;
+  text-align: center;
+}
+/* line 67, ../sass/foundation/_login.scss */
+#login-page #login-form #login-form-link,
+#login-page #login-form #register-form-link,
+#login-page #register-form #login-form-link,
+#login-page #register-form #register-form-link {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 36px;
+}
+/* line 74, ../sass/foundation/_login.scss */
+#login-page #login-form #login-form-link a, #login-page #login-form #login-form-link a:visited,
+#login-page #login-form #register-form-link a,
+#login-page #login-form #register-form-link a:visited,
+#login-page #register-form #login-form-link a,
+#login-page #register-form #login-form-link a:visited,
+#login-page #register-form #register-form-link a,
+#login-page #register-form #register-form-link a:visited {
+  color: white;
+}
+/* line 79, ../sass/foundation/_login.scss */
+#login-page #login-form .login-register-field,
+#login-page #register-form .login-register-field {
+  width: 100%;
+}
+/* line 82, ../sass/foundation/_login.scss */
+#login-page #login-form .login-register-field.button,
+#login-page #register-form .login-register-field.button {
+  margin: 40px 0px;
+}
+/* line 86, ../sass/foundation/_login.scss */
+#login-page #login-form .login-register-field .label,
+#login-page #login-form .login-register-field .field,
+#login-page #register-form .login-register-field .label,
+#login-page #register-form .login-register-field .field {
+  text-align: center;
+  clear: both;
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+/* line 94, ../sass/foundation/_login.scss */
+#login-page #login-form .login-register-field .label,
+#login-page #register-form .login-register-field .label {
+  font-size: 3rem;
+}
+/* line 98, ../sass/foundation/_login.scss */
+#login-page #login-form .login-register-field .field,
+#login-page #register-form .login-register-field .field {
+  height: auto;
+  text-align: center;
+  clear: both;
+  width: 100%;
+}
+/* line 104, ../sass/foundation/_login.scss */
+#login-page #login-form .login-register-field .field input,
+#login-page #login-form .login-register-field .field button,
+#login-page #register-form .login-register-field .field input,
+#login-page #register-form .login-register-field .field button {
+  width: 400px;
+  font-size: 2rem;
+  background-color: #FFF;
+  border: 2px solid #0929f3;
+  margin: 2px;
+}
+/* line 113, ../sass/foundation/_login.scss */
+#login-page #login-form .login-register-field .field .cancel.btn,
+#login-page #login-form .login-register-field .field .submit.btn,
+#login-page #register-form .login-register-field .field .cancel.btn,
+#login-page #register-form .login-register-field .field .submit.btn {
+  border: 5px solid white !important;
+  font-size: 2.5em !important;
+  height: 100px;
+  width: 300px;
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  /* line 131, ../sass/foundation/_login.scss */
+  #header #loginArea {
+    float: right;
+    color: #0929f3 !important;
+  }
+  /* line 136, ../sass/foundation/_login.scss */
+  #header #login-icon {
+    float: right;
+    border: 0;
+    width: 2rem;
+    margin-right: 1rem;
+  }
+  /* line 142, ../sass/foundation/_login.scss */
+  #header #login-icon a {
+    text-decoration: none;
+    color: #0929f3;
+    font-size: 3rem;
+    margin-top: 3px;
+  }
+  /* line 150, ../sass/foundation/_login.scss */
+  #header #login-text {
+    margin: 2px 6px;
+  }
+  /* line 153, ../sass/foundation/_login.scss */
+  #header #login-text a {
+    text-decoration: none;
+    font-size: 3rem;
+  }
+  /* line 160, ../sass/foundation/_login.scss */
+  #header .login-link span {
+    color: #0929f3;
+  }
+}
+/* line 1, ../sass/foundation/_nav.scss */
+#navArea {
+  width: 60%;
+  float: left;
+  text-align: left;
+  font-size: 3rem;
+}
+/* line 7, ../sass/foundation/_nav.scss */
+#navArea section, #navArea nav {
+  padding: 2px;
+  width: 100%;
+}
+/* line 11, ../sass/foundation/_nav.scss */
+#navArea section ul, #navArea nav ul {
+  width: 980px;
+  padding: 100px 0;
+}
+/* line 15, ../sass/foundation/_nav.scss */
+#navArea section ul li, #navArea nav ul li {
+  text-align: center;
+  padding: 20px;
+}
+/* line 21, ../sass/foundation/_nav.scss */
+#navArea section ul li a, #navArea nav ul li a {
+  text-decoration: none;
+}
+
+/* Screen reader only */
+/* line 30, ../sass/foundation/_nav.scss */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Button styling */
+/* line 42, ../sass/foundation/_nav.scss */
+.menu-toggle {
+  display: inline-block;
+  line-height: 1em;
+  font-size: 3rem;
+  color: #0929f3;
+}
+
+/*
+ Default styles + Mobile first
+ Offscreen menu style
+*/
+/* line 54, ../sass/foundation/_nav.scss */
+.main-menu {
+  position: absolute;
+  font-size: 16px;
+  display: none;
+  left: -200px;
+  top: 0;
+  overflow-y: scroll;
+  overflow-x: visible;
+  transition: left 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
+}
+/* line 67, ../sass/foundation/_nav.scss */
+.main-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 2.5em 0 0;
+  /* Hide shadow w/ -8px while 'closed' */
+  -webkit-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+  box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  background: #0929f3;
+}
+/* line 80, ../sass/foundation/_nav.scss */
+.main-menu a {
+  display: block;
+  padding: .25em 15px .2em 15px;
+  line-height: 1em;
+  font-size: 4rem;
+  text-decoration: none;
+  color: #FFF;
+}
+/* line 88, ../sass/foundation/_nav.scss */
+.main-menu a:hover, .main-menu a:focus {
+  background: #333;
+  text-decoration: underline;
+}
+/* line 95, ../sass/foundation/_nav.scss */
+.main-menu li {
+  clear: both;
+}
+/* line 98, ../sass/foundation/_nav.scss */
+.main-menu .menu-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 105, ../sass/foundation/_nav.scss */
+.login-menu {
+  position: absolute;
+  font-size: 16px;
+  display: none;
+  left: -200px;
+  top: 0;
+  overflow-y: scroll;
+  overflow-x: visible;
+  transition: left 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
+}
+/* line 118, ../sass/foundation/_nav.scss */
+.login-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 2.5em 0 0;
+  /* Hide shadow w/ -8px while 'closed' */
+  -webkit-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+  box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  background: #0929f3;
+}
+/* line 131, ../sass/foundation/_nav.scss */
+.login-menu a {
+  display: block;
+  padding: .25em 15px;
+  line-height: 1em;
+  font-size: 4rem;
+  text-decoration: none;
+  color: #FFF;
+}
+/* line 139, ../sass/foundation/_nav.scss */
+.login-menu a:hover, .login-menu a:focus {
+  background: #333;
+  text-decoration: underline;
+}
+/* line 146, ../sass/foundation/_nav.scss */
+.login-menu li {
+  clear: both;
+}
+/* line 149, ../sass/foundation/_nav.scss */
+.login-menu .menu-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/*
+ On small devices, allow it to toggle...
+*/
+/*
+ :target for non-JavaScript
+ [aria-expanded] will be used if/when JavaScript is added to improve interaction, though it's completely optional.
+*/
+/* line 163, ../sass/foundation/_nav.scss */
+.main-menu:target,
+.main-menu[aria-expanded="true"] {
+  display: block;
+  left: 0;
+  outline: none;
+  -moz-box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+}
+
+/* line 173, ../sass/foundation/_nav.scss */
+.main-menu:target .menu-close,
+.main-menu[aria-expanded="true"] .menu-close {
+  z-index: 1001;
+}
+
+/* line 178, ../sass/foundation/_nav.scss */
+.main-menu:target ul,
+.main-menu[aria-expanded="true"] ul {
+  position: relative;
+  z-index: 1000;
+}
+
+/* 
+ We could us `.main-menu:target:after`, but
+ it wouldn't be clickable.
+*/
+/* line 188, ../sass/foundation/_nav.scss */
+.main-menu:target + .backdrop,
+.main-menu[aria-expanded="true"] + .backdrop {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 998;
+  background: #000;
+  background: rgba(0, 0, 0, 0.85);
+  cursor: default;
+}
+
+@supports (position: fixed) {
+  /* line 203, ../sass/foundation/_nav.scss */
+  .main-menu,
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded="true"] + .backdrop {
+    position: fixed;
+  }
+}
+/*
+ Larger screen styling
+ Horizontal menu
+*/
+@media only screen and (min-device-width: 641px) {
+  /* line 215, ../sass/foundation/_nav.scss */
+  #navArea {
+    font-size: 1rem;
+    width: 85%;
+  }
+  /* line 220, ../sass/foundation/_nav.scss */
+  #navArea nav ul {
+    padding: 0;
+  }
+  /* line 223, ../sass/foundation/_nav.scss */
+  #navArea nav ul li {
+    padding: 0;
+  }
+  /* line 226, ../sass/foundation/_nav.scss */
+  #navArea nav ul li a.selected {
+    color: #0929f3;
+  }
+  /* line 233, ../sass/foundation/_nav.scss */
+  #navArea a {
+    margin-top: 0px;
+  }
+
+  /* line 239, ../sass/foundation/_nav.scss */
+  #loginArea {
+    font-size: 1rem;
+  }
+
+  /* line 243, ../sass/foundation/_nav.scss */
+  .menu-toggle,
+  .main-menu .menu-close {
+    display: none;
+  }
+
+  /* Undo positioning of off-canvas menu */
+  /* line 249, ../sass/foundation/_nav.scss */
+  .main-menu {
+    position: relative;
+    left: auto;
+    top: auto;
+    height: auto;
+    display: block;
+  }
+  /* line 256, ../sass/foundation/_nav.scss */
+  .main-menu ul {
+    display: flex;
+    /* Undo off-canvas styling */
+    padding: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    height: auto;
+    width: auto;
+    background: none;
+  }
+  /* line 275, ../sass/foundation/_nav.scss */
+  .main-menu ul li span {
+    font-size: 1.2rem;
+  }
+  /* line 280, ../sass/foundation/_nav.scss */
+  .main-menu ul li a {
+    color: #000;
+  }
+
+  /* line 288, ../sass/foundation/_nav.scss */
+  .main-menu a {
+    border: 0 !important;
+    /* Remove borders from off-canvas styling */
+    font-size: 1rem;
+    color: #000;
+  }
+
+  /* line 294, ../sass/foundation/_nav.scss */
+  .main-menu a:hover,
+  .main-menu a:focus {
+    background: none;
+    /* Remove background from off-canvas styling */
+    color: #000;
+  }
+}
+/* line 2, ../sass/foundation/_selector.scss */
+#selector_row {
+  background-color: #0929f3;
+  color: #FFF;
+  width: 100%;
+  float: left;
+  padding-bottom: 5px;
+}
+/* line 9, ../sass/foundation/_selector.scss */
+#selector_row .selector-area {
+  margin: auto;
+  width: 1000px;
+  font-family: "AvenirBook";
+  font-size: 18px;
+  padding: 0.25em 0;
+  display: block;
+}
+/* line 17, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field {
+  float: left;
+}
+/* line 20, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field#contact_info {
+  display: none;
+}
+/* line 24, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field .label,
+#selector_row .selector-area .selector-field .field {
+  clear: none;
+  width: auto;
+  float: left;
+}
+/* line 31, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field .label {
+  padding-top: 2px;
+}
+/* line 35, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field .field {
+  height: 30px;
+  border: 0 !important;
+}
+/* line 40, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field .field a .fa, #selector_row .selector-area .selector-field .field a:visited .fa {
+  color: white;
+  font-size: 1.5rem;
+}
+/* line 46, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field .field select,
+#selector_row .selector-area .selector-field .field input,
+#selector_row .selector-area .selector-field .field button {
+  font: 12px "AvenirBook";
+  padding: 3px 6px;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border: 2px solid #0929f3;
+  margin: 2px;
+}
+/* line 62, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field .field select.danger,
+#selector_row .selector-area .selector-field .field input.danger,
+#selector_row .selector-area .selector-field .field button.danger {
+  border-color: #f00;
+}
+/* line 67, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field .field #classSelector {
+  width: 160px;
+}
+/* line 71, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field .field #dateSelector {
+  width: 90px;
+  margin: 2px 0 2px 4px !important;
+}
+/* line 76, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field .field #timeSelector {
+  width: 65px;
+  margin: 2px 2px 2px 0 !important;
+}
+/* line 81, ../sass/foundation/_selector.scss */
+#selector_row .selector-area .selector-field .field #selectorSubmit {
+  font: 16px "AvenirBook" !important;
+  height: 26px;
+  width: 100px;
+  color: white;
+  background-color: #0929f3;
+  border: 2px solid white !important;
+  padding: 0 6px 4px !important;
+  margin: 2px 0 0 4px;
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  /* line 101, ../sass/foundation/_selector.scss */
+  #selector_row {
+    text-align: left;
+    padding: 100px 0;
+  }
+  /* line 105, ../sass/foundation/_selector.scss */
+  #selector_row #mobile_thanks {
+    width: 80%;
+    margin: 280px 10%;
+    font-family: "AvenirBook";
+  }
+  /* line 110, ../sass/foundation/_selector.scss */
+  #selector_row #mobile_thanks h1 {
+    font-size: 3rem;
+  }
+  /* line 113, ../sass/foundation/_selector.scss */
+  #selector_row #mobile_thanks h2 {
+    font-size: 2rem;
+  }
+  /* line 118, ../sass/foundation/_selector.scss */
+  #selector_row.unauthenticated {
+    padding: 50px 0 !important;
+  }
+  /* line 123, ../sass/foundation/_selector.scss */
+  #selector_row.unauthenticated .selector-area .selector-field .label,
+  #selector_row.unauthenticated .selector-area .selector-field .field {
+    margin: 0 0 13px 0;
+  }
+  /* line 132, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area {
+    width: 900px;
+    margin: 0 auto;
+  }
+  /* line 136, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area .selector-field {
+    width: 100%;
+    margin: 0 20px;
+  }
+  /* line 140, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area .selector-field#contact_info {
+    display: block;
+  }
+  /* line 144, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area .selector-field .label,
+  #selector_row .selector-area .selector-field .field {
+    text-align: center;
+    clear: both;
+    width: 100%;
+    margin: 0 0 30px 0;
+  }
+  /* line 152, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area .selector-field .label {
+    font-size: 3rem;
+  }
+  /* line 156, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area .selector-field .field {
+    height: auto;
+    text-align: center;
+    clear: both;
+    width: 100%;
+  }
+  /* line 163, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area .selector-field .field a .fa, #selector_row .selector-area .selector-field .field a:visited .fa {
+    font-size: 3rem;
+  }
+  /* line 168, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area .selector-field .field select,
+  #selector_row .selector-area .selector-field .field input,
+  #selector_row .selector-area .selector-field .field button {
+    font-size: 2rem;
+    background-color: #FFF;
+    border: 2px solid #0929f3;
+    margin: 2px;
+  }
+  /* line 177, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area .selector-field .field #mobile_contact_info,
+  #selector_row .selector-area .selector-field .field #classSelector,
+  #selector_row .selector-area .selector-field .field #contactInfo {
+    width: 400px;
+  }
+  /* line 183, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area .selector-field .field #dateSelector,
+  #selector_row .selector-area .selector-field .field #timeSelector {
+    width: 195px;
+  }
+  /* line 188, ../sass/foundation/_selector.scss */
+  #selector_row .selector-area .selector-field .field #selectorSubmit {
+    border: 5px solid white !important;
+    font-size: 2.5em !important;
+    height: 100px;
+    width: 300px;
+  }
+}
+/* line 1, ../sass/foundation/_squares.scss */
+.mobile_square {
+  float: left;
+  width: 100%;
+}
+/* line 5, ../sass/foundation/_squares.scss */
+.mobile_square img {
+  width: 100%;
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+/* phone landscape */
+/* desktop or tablet */
+@media only screen and (min-device-width: 641px) {
+  /* line 23, ../sass/foundation/_squares.scss */
+  .mobile_square {
+    display: none;
+  }
+}
+/* line 2, ../sass/foundation/_user.scss */
+#user-profile-page {
+  font-family: "AvenirBook";
+  color: white;
+}
+/* line 6, ../sass/foundation/_user.scss */
+#user-profile-page #user-profile-form {
+  margin: 100px 0 0;
+}
+/* line 9, ../sass/foundation/_user.scss */
+#user-profile-page #user-profile-form .user-profile-field {
+  width: 100%;
+  margin: 0 30px;
+}
+/* line 13, ../sass/foundation/_user.scss */
+#user-profile-page #user-profile-form .user-profile-field .label,
+#user-profile-page #user-profile-form .user-profile-field .field {
+  text-align: center;
+  clear: both;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+/* line 21, ../sass/foundation/_user.scss */
+#user-profile-page #user-profile-form .user-profile-field .label {
+  font-size: 3rem;
+}
+/* line 25, ../sass/foundation/_user.scss */
+#user-profile-page #user-profile-form .user-profile-field .field {
+  height: auto;
+  text-align: center;
+  clear: both;
+  width: 100%;
+}
+/* line 31, ../sass/foundation/_user.scss */
+#user-profile-page #user-profile-form .user-profile-field .field span {
+  background-color: #FFF;
+  font-size: 36px;
+  color: #000;
+  padding: 4px 180px;
+}
+/* line 38, ../sass/foundation/_user.scss */
+#user-profile-page #user-profile-form .user-profile-field .field input,
+#user-profile-page #user-profile-form .user-profile-field .field button {
+  width: 550px;
+  font-size: 2rem;
+  background-color: #FFF;
+  text-align: center;
+  border: 2px solid #0929f3;
+  margin: 2px;
+}
+/* line 48, ../sass/foundation/_user.scss */
+#user-profile-page #user-profile-form .user-profile-field .field .submit.btn,
+#user-profile-page #user-profile-form .user-profile-field .field .logout.btn {
+  border: 5px solid white !important;
+  font-size: 2.5em !important;
+  height: 100px;
+  width: 300px;
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+/* line 1, ../sass/foundation/_video.scss */
+#wrap_video {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+/* line 7, ../sass/foundation/_video.scss */
+#wrap_video video {
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+/* line 14, ../sass/foundation/_video.scss */
+#wrap_video #video_overlay {
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+/* line 21, ../sass/foundation/_video.scss */
+#wrap_video #video_overlay IMG {
+  width: 100%;
+  height: auto;
+  z-index: 100;
+}
+
+/* line 29, ../sass/foundation/_video.scss */
+.class_video {
+  float: left;
+  width: 100%;
+}
+/* line 33, ../sass/foundation/_video.scss */
+.class_video video {
+  width: 100%;
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  /* line 42, ../sass/foundation/_video.scss */
+  #wrap_video, .class_video {
+    display: none;
+  }
+}
+/* phone landscape */
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) {
+  /* line 49, ../sass/foundation/_video.scss */
+  #wrap_video, .class_video {
+    display: none;
+  }
+}
+/* desktop or tablet */
+/* line 29, ../sass/main.scss */
+.center-text {
+  text-align: center !important;
+}
+
+/* line 33, ../sass/main.scss */
+.left-text {
+  text-align: left !important;
+}
+
+/* line 37, ../sass/main.scss */
+.tiny-text {
+  font-size: 12px;
+}
+
+/* line 41, ../sass/main.scss */
+.danger {
+  color: #f00;
+  border-color: #f00;
+}
+
+/* line 46, ../sass/main.scss */
+input,
+select,
+.btn,
+.ui-widget {
+  font-family: "AvenirBook";
+  font-size: 16px;
+  color: #000;
+  text-overflow: inherit;
+}
+
+/* line 56, ../sass/main.scss */
+#text_area {
+  float: left;
+  width: 100%;
+  margin: 40px auto 0;
+}
+/* line 61, ../sass/main.scss */
+#text_area .title_blue {
+  color: #0929f3;
+  width: 100%;
+  text-align: center;
+  font-size: 48px;
+  font-family: "AvenirBook";
+  float: left;
+  vertical-align: super;
+}
+/* line 71, ../sass/main.scss */
+#text_area .question,
+#text_area .teacher,
+#text_area .subtitle {
+  width: 80%;
+  margin: 0 10%;
+  text-align: center;
+  font-size: 18px;
+  font-family: "AvenirBook";
+  line-height: 1.7em;
+}
+/* line 81, ../sass/main.scss */
+#text_area .question a,
+#text_area .question a:visited,
+#text_area .teacher a,
+#text_area .teacher a:visited,
+#text_area .subtitle a,
+#text_area .subtitle a:visited {
+  color: #0929f3;
+}
+/* line 86, ../sass/main.scss */
+#text_area .question strong,
+#text_area .teacher strong,
+#text_area .subtitle strong {
+  color: #0929f3;
+}
+/* line 91, ../sass/main.scss */
+#text_area .question {
+  padding: 0 0 40px;
+}
+/* line 95, ../sass/main.scss */
+#text_area .subtitle {
+  float: left;
+  padding: 0 0 25px;
+}
+/* line 100, ../sass/main.scss */
+#text_area .teacher {
+  text-align: left;
+}
+/* line 103, ../sass/main.scss */
+#text_area .teacher img {
+  width: 200px;
+  clear: none;
+  float: left;
+  padding: 5px;
+}
+
+/* line 112, ../sass/main.scss */
+select.error,
+textarea.error,
+input.error {
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+/* line 119, ../sass/main.scss */
+.ui-dialog {
+  font-family: "AvenirBook" !important;
+}
+/* line 122, ../sass/main.scss */
+.ui-dialog input[type="text"],
+.ui-dialog input[type="password"],
+.ui-dialog textarea,
+.ui-dialog select,
+.ui-dialog .ui-widget {
+  width: 100%;
+}
+/* line 130, ../sass/main.scss */
+.ui-dialog input[type="checkbox"] {
+  width: 30px;
+}
+
+/* line 135, ../sass/main.scss */
+#want-to-teach {
+  background-color: #0929f3;
+  color: #fff;
+  width: 84%;
+  padding: 0 8% 5px;
+  float: left;
+  font-family: "AvenirBook";
+}
+/* line 143, ../sass/main.scss */
+#want-to-teach a,
+#want-to-teach a:visited {
+  color: #fff;
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  /* line 152, ../sass/main.scss */
+  .desktop_div {
+    display: none;
+  }
+
+  /* line 156, ../sass/main.scss */
+  .tiny-text {
+    font-size: 2.5rem;
+  }
+
+  /* line 160, ../sass/main.scss */
+  input[type="checkbox"] {
+    min-height: 40px;
+    min-width: 40px;
+  }
+
+  /* line 165, ../sass/main.scss */
+  #text_area {
+    width: 86%;
+    margin: 70px 7% 0;
+  }
+  /* line 169, ../sass/main.scss */
+  #text_area .title_blue {
+    font: bold 72px "AvenirBook";
+  }
+  /* line 173, ../sass/main.scss */
+  #text_area .subtitle {
+    width: 100%;
+    margin: 0;
+    line-height: 5.5rem;
+    font-size: 2.3rem;
+  }
+
+  /* line 181, ../sass/main.scss */
+  #want-to-teach {
+    text-align: center;
+    font-size: 3rem;
+    padding: 200px 8%;
+    width: 100%;
+  }
+}
+/* desktop or tablet */
+@media only screen and (min-device-width: 641px) {
+  /* line 191, ../sass/main.scss */
+  .mobile-link,
+  .mobile-span,
+  .mobile_div {
+    display: none;
+  }
+}
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  /* line 200, ../sass/main.scss */
+  .desktop-link,
+  .desktop-span,
+  .desktop_div {
+    display: none;
+  }
+}

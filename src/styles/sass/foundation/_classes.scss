@@ -1,0 +1,141 @@
+.class {
+    width: 100%;
+    float: left;
+
+    img {
+        width: 100%;
+    }
+
+    a.link,
+    a.link:visited {
+        color: $tals-blue;
+    }
+
+    .details {
+        width: 97%;
+        margin: 0.6em 1.5% 1em;
+        float: left;
+        font-family: "AvenirBook";
+
+        .description {
+            float: left;
+            width: 80%;
+
+            .title {
+                font-weight: bold;
+            }
+        }
+
+        .register-class,
+        .reschedule-class {
+            font-family: "AvenirBook";
+            font-size: 13px;
+            // float: right;
+            padding: 0.1em 0.4em;
+            white-space: nowrap;
+            margin: 0 0 0.2em 0;
+            clear: both;
+            color: #FFF;
+            background-color: $tals-blue;
+        }
+
+        .action {
+            float: right;
+            width: 17%;
+            margin-left: 3%;
+        }
+
+        .show_hide {
+            color: #000;
+            text-decoration: none;
+            font-family: "AvenirBook";
+            font-size: 14px;
+            display: none;
+        }
+
+        .moretext {
+            display: block;
+        }
+    }
+
+    #music-class-form {
+        button,
+        input {
+            font-size: 12px;
+        }
+        textarea {
+            width: 100%;
+            height: 5em;
+            border-color: rgb(238,238,238);
+        }
+    }
+}
+
+/* EVENT STYLES */
+a.fc-day-grid-event, 
+.polymer-clay-mandalas { 
+    background-color: #FFF !important;
+    border: 1px solid transparent !important;
+    color: #000 !important;
+}
+
+.marzipan-animals {
+    background-color: #FFF !important;
+    border: 1px solid transparent !important;
+    color: #000 !important;
+}
+
+.book-club-with-a-twist {
+    background-color: #FFF !important;
+    border: 1px solid transparent !important;
+    color: #000 !important;
+}
+
+.get-lost-in-intuitive-painting {
+    background-color: #FFF !important;
+    border: 1px solid transparent !important;
+    color: #000 !important;
+}
+
+.beautify-your-home {
+    background-color: #FFF !important;
+    border: 1px solid transparent !important;
+    color: #000 !important;
+}
+
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+    .class_rectangle {
+        display: none;
+    }
+    .class {
+        .details {
+            width: 100%;
+            margin: 0;
+            line-height: 5.5rem;
+            font-size: 2.3rem;
+        
+            .show_hide_container {
+                line-height: 1rem;
+                margin: 0 0 80px;
+
+                .show_hide {
+                    font-size: inherit;
+                    color: $tals-blue;
+                    display: block;
+                }
+            }
+
+            .moretext {
+                display: none;
+            }
+        }
+    }
+}
+
+/* desktop or tablet */
+@media only screen and (min-device-width: 641px) {
+
+}

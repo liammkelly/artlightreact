@@ -1,0 +1,199 @@
+
+#selector_row {
+    background-color: $tals-blue;
+    color: #FFF;
+    width: 100%;
+    float: left;
+    padding-bottom: 5px;
+
+    .selector-area {
+        margin: auto;
+        width: 1000px;
+        font-family: "AvenirBook";
+        font-size: 18px;
+        padding: 0.25em 0;
+        display: block;
+
+        .selector-field {
+            float: left;
+
+            &#contact_info {
+                display: none;
+            }
+
+            .label,
+            .field {
+                clear: none;
+                width: auto;
+                float: left;
+            }
+
+            .label {
+                padding-top: 2px;
+            }
+
+            .field {
+                height: 30px;
+                border: 0 !important;
+
+                a, a:visited {
+                    .fa {
+                        color: white;
+                        font-size:1.5rem;
+                    }
+                } 
+
+                select,
+                input,
+                button {
+                    font: 12px "AvenirBook";
+                    padding: 3px 6px;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    -webkit-appearance: none;
+                    -webkit-border-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                    border-top-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    border: $selector-field-border-width solid $tals-blue;
+                    margin: $selector-field-border-width;
+                
+                    &.danger {
+                        border-color: $tals-red;
+                    }
+                }
+
+                #classSelector {
+                    width: 160px;
+                }
+
+                #dateSelector {
+                    width: 90px;
+                    margin: 2px 0 2px 4px !important;
+                }
+
+                #timeSelector {
+                    width: 65px;
+                    margin: 2px 2px 2px 0 !important;
+                }
+
+                #selectorSubmit {
+                    font: 16px "AvenirBook" !important;
+                    height: 26px;
+                    width: 100px;
+                    color: white;
+                    background-color: $tals-blue;
+                    border: 2px solid white !important;
+                    padding: 0 6px 4px !important;
+                    margin: 2px 0 0 4px;
+                }
+
+            }
+
+        }
+    }
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+    #selector_row {
+        text-align: left;
+        padding: 100px 0;
+
+        #mobile_thanks {
+            width: 80%;
+            margin: 280px 10%;
+            font-family: "AvenirBook";
+
+            h1 { 
+                font-size: 3rem;
+            }
+            h2 { 
+                font-size: 2rem;
+            }
+        }
+
+        &.unauthenticated {
+            padding: 50px 0 !important;
+
+            .selector-area {
+                .selector-field {
+                    .label,
+                    .field {
+                        margin: 0 0 13px 0;
+                    }
+                }
+            }
+
+        }
+
+        .selector-area {
+            width: 900px;
+            margin: 0 auto;
+
+            .selector-field {
+                width: 100%;
+                margin: 0 20px;
+
+                &#contact_info {
+                    display: block;
+                }
+
+                .label,
+                .field {
+                    text-align: center;
+                    clear: both;
+                    width: 100%;
+                    margin: 0 0 30px 0;
+                }
+
+                .label {
+                    font-size: 3rem;
+                }
+
+                .field {
+                    height: auto;
+                    text-align: center;
+                    clear: both;
+                    width: 100%;
+
+                    a, a:visited {
+                        .fa {
+                            font-size:3rem;
+                        }
+                    } 
+
+                    select,
+                    input,
+                    button {
+                        font-size: 2rem;
+                        background-color: #FFF;
+                        border: $selector-field-border-width solid $tals-blue;
+                        margin: $selector-field-border-width;
+                    }
+
+                    #mobile_contact_info,
+                    #classSelector,
+                    #contactInfo {
+                        width: 400px;
+                    }
+
+                    #dateSelector,
+                    #timeSelector {
+                        width: 195px;
+                    }
+
+                    #selectorSubmit {
+                        border: 5px solid white !important;
+                        font-size: 2.5em !important;
+                        height: 100px;
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+

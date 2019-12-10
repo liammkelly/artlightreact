@@ -1,0 +1,205 @@
+@font-face {
+  font-family: AvenirBook;
+  src: url(../fonts/Avenir-Book.ttf);
+}
+
+$tals-blue: #0929f3;
+$tals-red: #f00;
+$tals-grey: #ededed;
+$selector-field-border-width: 2px;
+
+html,
+body {
+  margin: 0px;
+  font-size: 18px;
+}
+
+@import "foundation/calendar";
+@import "foundation/classes";
+@import "foundation/feedback";
+@import "foundation/gallery";
+@import "foundation/headerfooter";
+@import "foundation/login";
+@import "foundation/nav";
+@import "foundation/selector";
+@import "foundation/squares";
+@import "foundation/user";
+@import "foundation/video";
+
+.center-text {
+  text-align: center !important;
+}
+
+.left-text {
+  text-align: left !important;
+}
+
+.tiny-text {
+  font-size: 12px;
+}
+
+.danger {
+  color: #f00;
+  border-color: #f00;
+}
+
+input,
+select,
+.btn,
+.ui-widget {
+  font-family: "AvenirBook";
+  font-size: 16px;
+  color: #000;
+  text-overflow: inherit;
+}
+
+#text_area {
+  float: left;
+  width: 100%;
+  margin: 40px auto 0;
+
+  .title_blue {
+    color: $tals-blue;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    font-family: "AvenirBook";
+    float: left;
+    vertical-align: super;
+  }
+
+  .question,
+  .teacher,
+  .subtitle {
+    width: 80%;
+    margin: 0 10%;
+    text-align: center;
+    font-size: 18px;
+    font-family: "AvenirBook";
+    line-height: 1.7em;
+
+    a,
+    a:visited {
+      color: $tals-blue;
+    }
+
+    strong {
+      color: $tals-blue;
+    }
+  }
+
+  .question {
+    padding: 0 0 40px;
+  }
+
+  .subtitle {
+    float: left;
+    padding: 0 0 25px;
+  }
+
+  .teacher {
+    text-align: left;
+
+    img {
+      width: 200px;
+      clear: none;
+      float: left;
+      padding: 5px;
+    }
+  }
+}
+
+select.error,
+textarea.error,
+input.error {
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+.ui-dialog {
+  font-family: "AvenirBook" !important;
+
+  input[type="text"],
+  input[type="password"],
+  textarea,
+  select,
+  .ui-widget {
+    width: 100%;
+  }
+
+  input[type="checkbox"] {
+    width: 30px;
+  }
+}
+
+#want-to-teach {
+  background-color: $tals-blue;
+  color: #fff;
+  width: 84%;
+  padding: 0 8% 5px;
+  float: left;
+  font-family: "AvenirBook";
+
+  a,
+  a:visited {
+    color: #fff;
+  }
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  .desktop_div {
+    display: none;
+  }
+
+  .tiny-text {
+    font-size: 2.5rem;
+  }
+
+  input[type="checkbox"] {
+    min-height: 40px;
+    min-width: 40px;
+  }
+
+  #text_area {
+    width: 86%;
+    margin: 70px 7% 0;
+
+    .title_blue {
+      font: bold 72px "AvenirBook";
+    }
+
+    .subtitle {
+      width: 100%;
+      margin: 0;
+      line-height: 5.5rem;
+      font-size: 2.3rem;
+    }
+  }
+
+  #want-to-teach {
+    text-align: center;
+    font-size: 3rem;
+    padding: 200px 8%;
+    width: 100%;
+  }
+}
+
+/* desktop or tablet */
+@media only screen and (min-device-width: 641px) {
+  .mobile-link,
+  .mobile-span,
+  .mobile_div {
+    display: none;
+  }
+}
+
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  .desktop-link,
+  .desktop-span,
+  .desktop_div {
+    display: none;
+  }
+}

@@ -1,0 +1,166 @@
+#header {
+    #loginArea {
+        float: right;
+        font-size: 1rem;
+    }
+
+    .login-link {
+        float: right;
+
+        &a {
+            margin: 2px 6px;
+            text-decoration: none;
+            color: $tals-blue;
+        }
+
+        span {
+            color: $tals-blue;
+        }
+    }
+
+    #login-icon {
+        float: right;
+        border: 0;
+        font-size: 1.2rem;
+        width: 30px;
+        color: $tals-blue;
+    }
+
+    #login-text {
+        margin: 2px 6px 2px 10px;
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+}
+
+#close-button {
+    float: right;
+    clear: none;
+    margin: 10px 20px 0 0;
+    
+    a {
+        color: white;
+        font-size: 4rem;
+    }
+}
+
+#login-page {
+    font-family: "AvenirBook";
+    color: white;
+    float: left;
+    width: 100%;
+
+    #login-form, 
+    #register-form {
+        margin: 0;
+
+        .header {
+            width: 76%;
+            margin: 0 12% 30px;
+            font-size: 42px;
+            text-align: center;
+        }
+
+        #login-form-link,
+        #register-form-link {
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 36px;
+
+            a, a:visited {
+                color: white;
+            }
+        }
+
+        .login-register-field {
+            width: 100%;
+
+            &.button {
+                margin: 40px 0px;
+            }
+
+            .label,
+            .field {
+                text-align: center;
+                clear: both;
+                width: 100%;
+                margin: 0 0 10px 0;
+            }
+
+            .label {
+                font-size: 3rem;
+            }
+
+            .field {
+                height: auto;
+                text-align: center;
+                clear: both;
+                width: 100%;
+
+                input,
+                button {
+                    width: 400px;
+                    font-size: 2rem;
+                    background-color: #FFF;
+                    border: $selector-field-border-width solid $tals-blue;
+                    margin: $selector-field-border-width;
+                }
+
+                .cancel.btn,
+                .submit.btn {
+                    border: 5px solid white !important;
+                    font-size: 2.5em !important;
+                    height: 100px;
+                    width: 300px;
+                }
+            }
+        }        
+    }
+}
+
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+    #header {
+
+        #loginArea {
+            float: right;
+            color: $tals-blue !important;
+        }
+
+        #login-icon {
+            float: right;
+            border: 0;
+            width: 2rem;
+            margin-right: 1rem;
+
+            a {
+                text-decoration: none;
+                color: $tals-blue;
+                font-size: 3rem;
+                margin-top: 3px;
+            }
+        }
+
+        #login-text {
+            margin: 2px 6px;
+
+            a {
+                text-decoration: none;
+                font-size: 3rem;
+            }
+        }
+
+        .login-link {
+            span {
+                color: $tals-blue;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,111 @@
+#wrapper {
+    position: relative;
+    float: left;
+    width: 100%;
+    // overflow: hidden;
+
+    IMG {
+        width:100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #calendar_container {
+        float : left;
+        width:100%;
+        overflow: scroll;
+    }
+
+    #calendar {
+        float : left;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        z-index: 100;
+        font-family: "AvenirBook";
+        color: #FFF;
+        // background-color: #FFF;
+        // margin: 0 10%;
+
+        .fc-today {
+            background-color: #03C;
+        }
+
+        .fc-event {
+            line-height: 1;
+            margin-bottom: 3px;
+            padding: 3px;
+        }
+    }
+}
+
+#event-detail-popper {
+    background-color: white !important;
+    border: 2px solid $tals-blue;
+    height:160px;
+    width:350px;
+    z-index: 10500;
+    padding: 10px;
+
+    .event_details {
+        float: left;
+
+        .detail_text {
+            float: left;
+            width: 95%;
+
+            .label {
+                float: left;
+                clear: left;
+                width: 70px;
+            }
+            .value {
+                float: left;
+                clear: right;
+            }
+        }
+        .buttons {
+            float: right;
+            width: 5%;
+            padding: 0 0 0 12px;
+
+            .link-icon {
+                margin: 14px 0;
+            }
+        }
+    }
+}
+
+#mobile_event_container {
+    float: left;
+    width: 100%;
+    background-attachment: scroll;
+    background-image: url(/assets/images/mobile/calendartexture.jpg);
+    margin: 0 0 2rem;
+
+    .mobile-date {
+        float: left;
+        width: 98%;
+        margin: 1rem 1% 0;
+        font-size: 2rem;
+        font-family: "AvenirBook";
+    }
+
+    .mobile-event {
+        float: left;
+        width: 98%;
+        margin: 0 1%;
+        font-size: 2rem;
+        font-family: "AvenirBook";
+    }
+
+    .mobile-date {
+        background-color: silver;
+    }
+
+    .mobile-event {
+        background:rgba(255,255,255,0.9);
+        padding: 7px 10px;
+    }
+}

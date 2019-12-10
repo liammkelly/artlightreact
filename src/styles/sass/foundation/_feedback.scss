@@ -1,0 +1,59 @@
+#feedback {
+    font-family: "AvenirBook";
+    width: 80%;
+    margin: 0 10% 30px;
+     
+    ul {
+        list-style-type: none;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .starrr a {
+        color: $tals-blue;
+    }
+
+    textarea {
+        width: 100%;
+        height: 5em;
+        border-color: rgb(238,238,238);
+    }
+
+    table {
+        .classname {
+            width: 270px;
+        }
+    }
+
+    #feedback_success {
+        display: none;
+        padding: 10px 0 0 40px;
+        color: $tals-blue;
+    }
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+    #feedback {
+        font-size: 2rem;
+        width: 100%;
+        margin: 0 0 80px;
+
+        table {
+            .classname {
+                width: 500px;
+            }
+            .starrr {
+                a {
+                    font-size: 2rem;
+                    letter-spacing: 1rem;
+                }
+            }
+        }
+
+        textarea {
+            font-size: 2rem;
+        }
+    }
+}

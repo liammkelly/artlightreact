@@ -1,0 +1,53 @@
+#gallery {
+    width: 100%;
+    float: left;
+
+    .gallery-row {
+        width: 100%;
+        float: left;
+
+        img {
+            float: left;
+            clear: none;
+            width: 23.5%;
+            margin: 1%;
+
+            &.top-row {
+                margin-top: 0 !important;
+            }
+
+            &.first {
+                margin: 1% 1% 1% 0;
+            }
+
+            &.last {
+                margin: 1% 0 1% 1%;
+            }
+        }
+
+    }
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+    #gallery {
+
+        .gallery-row {
+
+            img {
+                width: 100%;
+                clear: both;
+                margin: 0 0 20px;
+
+                &.first {
+                    margin: 0 0 20px;
+                }
+
+                &.last {
+                    margin: 0 0 20px;
+                }
+            }
+        }
+    }
+}

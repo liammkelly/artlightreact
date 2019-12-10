@@ -1,0 +1,65 @@
+
+#user-profile-page {
+    font-family: "AvenirBook";
+    color: white;
+
+    #user-profile-form {
+        margin: 100px 0 0;
+
+       .user-profile-field {
+            width: 100%;
+            margin: 0 30px;
+
+            .label,
+            .field {
+                text-align: center;
+                clear: both;
+                width: 100%;
+                margin: 0 0 30px 0;
+            }
+
+            .label {
+                font-size: 3rem;
+            }
+
+            .field {
+                height: auto;
+                text-align: center;
+                clear: both;
+                width: 100%;
+
+                span {
+                    background-color: #FFF;
+                    font-size: 36px;
+                    color: #000;
+                    padding: 4px 180px;
+                }
+
+                input,
+                button {
+                    width: 550px;
+                    font-size: 2rem;
+                    background-color: #FFF;
+                    text-align: center;
+                    border: $selector-field-border-width solid $tals-blue;
+                    margin: $selector-field-border-width;
+                }
+
+                .submit.btn,
+                .logout.btn {
+                    border: 5px solid white !important;
+                    font-size: 2.5em !important;
+                    height: 100px;
+                    width: 300px;
+                }
+            }
+        }        
+    }
+}
+
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+
+}

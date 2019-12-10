@@ -1,0 +1,26 @@
+.mobile_square {
+    float: left;
+    width: 100%;
+
+    img {
+        width:100%;
+    }
+}
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+
+}
+
+/* phone landscape */
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) {
+
+}
+
+/* desktop or tablet */
+@media only screen and (min-device-width: 641px) {
+    .mobile_square {
+        display: none;
+    }
+}

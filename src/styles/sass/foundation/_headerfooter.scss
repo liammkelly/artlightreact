@@ -1,0 +1,161 @@
+#header,
+#footer {
+    float: left;
+    width: 97%;
+    text-align: center;
+    font-family: "AvenirBook";
+    font-size: 18px;
+
+    .link,
+    .separator {
+        float: left;
+        color: #000;
+        margin: 2px 6px;
+
+        a {
+            text-decoration: none;
+            color: #000;
+
+            &.selected {
+                color: $tals-blue;
+            }
+        }
+    }
+
+    #loginArea {
+        float: right;
+        font-size: 1rem;
+    }
+
+    .login-link {
+        float: right;
+
+        &a {
+            margin: 2px 6px;
+            text-decoration: none;
+            color: $tals-blue;
+        }
+
+        span {
+            color: $tals-blue;
+        }
+    }
+
+    #login-icon {
+        float: right;
+        border: 0;
+        font-size: 1.2rem;
+        width: 30px;
+        color: $tals-blue;
+    }
+
+    #login-text {
+        margin: 2px 6px 2px 10px;
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+}
+
+#header {
+    margin: 0.3% 1.5% 0;
+    // height: 36px;
+}
+
+#footer {
+    // margin: 35px 1.5% 0;
+    padding: 50px 0;
+
+    a {
+        text-decoration: none;
+        color: #000;
+
+        &.selected {
+            color: $tals-blue;
+        }
+    }
+}
+
+#copyright {
+    text-align: center;
+    font-family: "AvenirBook";
+    border: 1px solid $tals-blue;
+    border-width: 0 0 1px 0;
+    float: left;
+    width: 80%;
+    margin: 25px 10% 0;
+    padding: 0 0 25px;
+}
+
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+    #header {
+        width: 90%;
+        margin: 2% 5%;
+
+        #loginArea {
+            float: right;
+            color: $tals-blue !important;
+        }
+
+        #login-icon {
+            float: right;
+            border: 0;
+            width: 2rem;
+            margin-right: 1rem;
+
+            a {
+                text-decoration: none;
+                color: $tals-blue;
+                font-size: 3rem;
+                margin-top: 3px;
+            }
+        }
+
+        #login-text {
+            margin: 2px 6px;
+
+            a {
+                text-decoration: none;
+                font-size: 3rem;
+            }
+        }
+
+        .login-link {
+            span {
+                color: $tals-blue;
+            }
+        }
+
+
+    }
+
+    #footer {
+        font-size: 2.3rem;
+        margin: 0 10%;
+        width: 80%;
+
+        a {
+            font-size: 2.3rem;
+        }
+   }
+
+    #copyright {
+        width: 100%;
+        font-size: 2.3rem;
+        background-color: $tals-grey;
+        padding: 120px 10%;
+        margin: 0;
+        border-width: 0;
+        line-height: 5.5rem;
+        font-size: 2.3rem;
+
+        a {
+            font-size: 2.3rem;
+        }
+    }
+}

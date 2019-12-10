@@ -1,0 +1,57 @@
+#wrap_video {
+    position: relative;
+    float: left;
+    width: 100%;
+    // overflow: hidden;
+
+    video {
+        width:100%;
+        //position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #video_overlay {
+        overflow: hidden;
+        width:100%;
+        position: absolute;
+        left: 0;
+        z-index: 100;
+
+        IMG {
+            width:100%;
+            height: auto;
+            z-index: 100;
+        }
+    }
+}
+
+.class_video {
+    float: left;
+    width: 100%;
+
+    video {
+        width:100%;
+    }
+}
+
+
+/* ***** MEDIA QUERIES FOR DEVICES ***** */
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    #wrap_video, .class_video {
+        display: none;
+    }
+}
+
+/* phone landscape */
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) {
+    #wrap_video, .class_video {
+        display: none;
+    }
+}
+
+/* desktop or tablet */
+@media only screen and (min-device-width: 641px) {
+
+}
