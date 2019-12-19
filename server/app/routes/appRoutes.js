@@ -10,7 +10,9 @@ const routes = app => {
 
   app.route("/login").post(users.authenticate_user)
 
-  app.route("/user").post(users.add_user)
+  app.route("/user").post(users.register_user)
+
+  app.route("/validate_username").post(users.validate_username)
 }
 
 module.exports = routes

@@ -1,3 +1,13 @@
+.fc {
+    float: left;
+    width: 100%;
+
+    .fc-toolbar,
+    .fc-view-container {
+        float: left;
+    }
+}
+
 #wrapper {
     position: relative;
     float: left;
@@ -17,7 +27,7 @@
         overflow: scroll;
     }
 
-    #calendar {
+    .fc {
         float : left;
         overflow: hidden;
         position: absolute;

@@ -2,6 +2,10 @@ import React from "react";
 import { connect } from 'react-redux';
 
 function HomePage(props) {
+    const showFeedback = () => {
+        window.location.replace("/feedback")
+    }
+
     return (
         <div>
             <div id="wrap_video">
@@ -11,24 +15,24 @@ function HomePage(props) {
                 </video>
             </div>
 
-            <div class="mobile_square">
+            <div className="mobile_square">
                 <img src={require("../public/images/mobile/LogoPic.png")} />
             </div>
 
             <div id="text_area">
-                <div class="title_blue">
+                <div className="title_blue">
                     what fills your cup?
                 </div>
 
-                <div class="subtitle desktop_div">
+                <div clasclassNames="subtitle desktop_div">
                     <p>Our mission is to help you live in the moment.</p>
                     <p>We think people forget to do that sometimes.</p>
                     <p>We imagine small groups bonding in <a href="/classes">classes</a> that combine the arts and mindfulness.</p>
                     <p>Does that sound like something you'd like to be a part of?</p>
-                    <p>We've only just begun, we'd love your <a href="javascript:;" class="feedback_lnk">feedback</a> and participation.</p>
+                    <p>We've only just begun, we'd love your <a href="/feedback" className="feedback_lnk">feedback</a> and participation.</p>
                 </div>
 
-                <div class="subtitle mobile_div">
+                <div className="subtitle mobile_div">
                     <p>Our mission is to help you live in the moment.  We think people forget to do that sometimes.  We imagine small groups bonding in <a href="/classes">classes</a> that combine the arts and midfulness.  Does that sound like something you'd like to be a part of?  We've only just begun, we'd love your <a href="javascript:;" class="feedback_lnk">feedback</a> and participation.</p>
                 </div>
 

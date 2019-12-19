@@ -6,7 +6,8 @@ import Nav from "./Nav";
 function Header() {
   const headerStyle = {
     width: "100%",
-    float: 'left'
+    float: 'left',
+    clear: 'both'
   }
 
   return (

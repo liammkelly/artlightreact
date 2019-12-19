@@ -22,6 +22,7 @@ const ClassesPage = props => {
                 <div className="details" style={{padding:" 0 10%", width: "auto"}}>
                     <p><strong>{cls.name}: {cls.subtitle}</strong></p>
                     <p>{cls.description}</p>
+                    <p>To sign up, simply pay with <a href="https://venmo.com/code?user_id=2872140462292992824" target="_blank">Venmo</a></p>
                 </div>
             </div>
         ) : '')}

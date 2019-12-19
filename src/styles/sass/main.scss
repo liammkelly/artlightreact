@@ -25,6 +25,7 @@ body {
 @import "foundation/squares";
 @import "foundation/user";
 @import "foundation/video";
+@import url('../css/font-awesome/css/font-awesome.min.css');
 
 .center-text {
   text-align: center !important;
@@ -41,6 +42,10 @@ body {
 .danger {
   color: #f00;
   border-color: #f00;
+}
+
+input:invalid {
+  border: 1px solid red;
 }
 
 input,

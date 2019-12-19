@@ -9,8 +9,8 @@ const Selector = props => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
-      <div id="selector_row" className="unauthenticated">
+    <div id="selector_row" className="unauthenticated">
+      <form onSubmit={onSubmit}>
         <div className="selector-area">
           <div className="selector-field">
             <div className="label" style={{ fontWeight: 900 }}>
@@ -111,8 +111,8 @@ const Selector = props => {
             </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   )
 }
 

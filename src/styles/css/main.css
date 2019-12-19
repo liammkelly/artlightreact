@@ -1,3 +1,4 @@
+@import url("../css/font-awesome/css/font-awesome.min.css");
 @font-face {
   font-family: AvenirBook;
   src: url(../fonts/Avenir-Book.ttf);
@@ -10,26 +11,37 @@ body {
 }
 
 /* line 1, ../sass/foundation/_calendar.scss */
+.fc {
+  float: left;
+  width: 100%;
+}
+/* line 5, ../sass/foundation/_calendar.scss */
+.fc .fc-toolbar,
+.fc .fc-view-container {
+  float: left;
+}
+
+/* line 11, ../sass/foundation/_calendar.scss */
 #wrapper {
   position: relative;
   float: left;
   width: 100%;
 }
-/* line 7, ../sass/foundation/_calendar.scss */
+/* line 17, ../sass/foundation/_calendar.scss */
 #wrapper IMG {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 14, ../sass/foundation/_calendar.scss */
+/* line 24, ../sass/foundation/_calendar.scss */
 #wrapper #calendar_container {
   float: left;
   width: 100%;
   overflow: scroll;
 }
-/* line 20, ../sass/foundation/_calendar.scss */
-#wrapper #calendar {
+/* line 30, ../sass/foundation/_calendar.scss */
+#wrapper .fc {
   float: left;
   overflow: hidden;
   position: absolute;
@@ -38,18 +50,18 @@ body {
   font-family: "AvenirBook";
   color: #FFF;
 }
-/* line 31, ../sass/foundation/_calendar.scss */
-#wrapper #calendar .fc-today {
+/* line 41, ../sass/foundation/_calendar.scss */
+#wrapper .fc .fc-today {
   background-color: #03C;
 }
-/* line 35, ../sass/foundation/_calendar.scss */
-#wrapper #calendar .fc-event {
+/* line 45, ../sass/foundation/_calendar.scss */
+#wrapper .fc .fc-event {
   line-height: 1;
   margin-bottom: 3px;
   padding: 3px;
 }
 
-/* line 43, ../sass/foundation/_calendar.scss */
+/* line 53, ../sass/foundation/_calendar.scss */
 #event-detail-popper {
   background-color: white !important;
   border: 2px solid #0929f3;
@@ -58,38 +70,38 @@ body {
   z-index: 10500;
   padding: 10px;
 }
-/* line 51, ../sass/foundation/_calendar.scss */
+/* line 61, ../sass/foundation/_calendar.scss */
 #event-detail-popper .event_details {
   float: left;
 }
-/* line 54, ../sass/foundation/_calendar.scss */
+/* line 64, ../sass/foundation/_calendar.scss */
 #event-detail-popper .event_details .detail_text {
   float: left;
   width: 95%;
 }
-/* line 58, ../sass/foundation/_calendar.scss */
+/* line 68, ../sass/foundation/_calendar.scss */
 #event-detail-popper .event_details .detail_text .label {
   float: left;
   clear: left;
   width: 70px;
 }
-/* line 63, ../sass/foundation/_calendar.scss */
+/* line 73, ../sass/foundation/_calendar.scss */
 #event-detail-popper .event_details .detail_text .value {
   float: left;
   clear: right;
 }
-/* line 68, ../sass/foundation/_calendar.scss */
+/* line 78, ../sass/foundation/_calendar.scss */
 #event-detail-popper .event_details .buttons {
   float: right;
   width: 5%;
   padding: 0 0 0 12px;
 }
-/* line 73, ../sass/foundation/_calendar.scss */
+/* line 83, ../sass/foundation/_calendar.scss */
 #event-detail-popper .event_details .buttons .link-icon {
   margin: 14px 0;
 }
 
-/* line 80, ../sass/foundation/_calendar.scss */
+/* line 90, ../sass/foundation/_calendar.scss */
 #mobile_event_container {
   float: left;
   width: 100%;
@@ -97,7 +109,7 @@ body {
   background-image: url(/assets/images/mobile/calendartexture.jpg);
   margin: 0 0 2rem;
 }
-/* line 87, ../sass/foundation/_calendar.scss */
+/* line 97, ../sass/foundation/_calendar.scss */
 #mobile_event_container .mobile-date {
   float: left;
   width: 98%;
@@ -105,7 +117,7 @@ body {
   font-size: 2rem;
   font-family: "AvenirBook";
 }
-/* line 95, ../sass/foundation/_calendar.scss */
+/* line 105, ../sass/foundation/_calendar.scss */
 #mobile_event_container .mobile-event {
   float: left;
   width: 98%;
@@ -113,11 +125,11 @@ body {
   font-size: 2rem;
   font-family: "AvenirBook";
 }
-/* line 103, ../sass/foundation/_calendar.scss */
+/* line 113, ../sass/foundation/_calendar.scss */
 #mobile_event_container .mobile-date {
   background-color: silver;
 }
-/* line 107, ../sass/foundation/_calendar.scss */
+/* line 117, ../sass/foundation/_calendar.scss */
 #mobile_event_container .mobile-event {
   background: rgba(255, 255, 255, 0.9);
   padding: 7px 10px;
@@ -600,126 +612,123 @@ a.fc-day-grid-event,
   float: left;
   width: 100%;
 }
-/* line 56, ../sass/foundation/_login.scss */
-#login-page #login-form,
-#login-page #register-form {
-  margin: 0;
+
+/* line 57, ../sass/foundation/_login.scss */
+#login-form,
+#register-form {
+  padding: 100px 0 0;
 }
-/* line 60, ../sass/foundation/_login.scss */
-#login-page #login-form .header,
-#login-page #register-form .header {
+/* line 61, ../sass/foundation/_login.scss */
+#login-form table,
+#register-form table {
+  margin: 0 auto;
+  font-family: "AvenirBook";
+}
+/* line 66, ../sass/foundation/_login.scss */
+#login-form .header,
+#register-form .header {
   width: 76%;
   margin: 0 12% 30px;
-  font-size: 42px;
   text-align: center;
 }
-/* line 67, ../sass/foundation/_login.scss */
-#login-page #login-form #login-form-link,
-#login-page #login-form #register-form-link,
-#login-page #register-form #login-form-link,
-#login-page #register-form #register-form-link {
+/* line 72, ../sass/foundation/_login.scss */
+#login-form #login-form-link,
+#login-form #register-form-link,
+#register-form #login-form-link,
+#register-form #register-form-link {
   width: 100%;
   text-align: center;
   color: white;
   font-size: 36px;
 }
-/* line 74, ../sass/foundation/_login.scss */
-#login-page #login-form #login-form-link a, #login-page #login-form #login-form-link a:visited,
-#login-page #login-form #register-form-link a,
-#login-page #login-form #register-form-link a:visited,
-#login-page #register-form #login-form-link a,
-#login-page #register-form #login-form-link a:visited,
-#login-page #register-form #register-form-link a,
-#login-page #register-form #register-form-link a:visited {
+/* line 79, ../sass/foundation/_login.scss */
+#login-form #login-form-link a, #login-form #login-form-link a:visited,
+#login-form #register-form-link a,
+#login-form #register-form-link a:visited,
+#register-form #login-form-link a,
+#register-form #login-form-link a:visited,
+#register-form #register-form-link a,
+#register-form #register-form-link a:visited {
   color: white;
 }
-/* line 79, ../sass/foundation/_login.scss */
-#login-page #login-form .login-register-field,
-#login-page #register-form .login-register-field {
+/* line 84, ../sass/foundation/_login.scss */
+#login-form .login-register-field,
+#register-form .login-register-field {
   width: 100%;
 }
-/* line 82, ../sass/foundation/_login.scss */
-#login-page #login-form .login-register-field.button,
-#login-page #register-form .login-register-field.button {
+/* line 87, ../sass/foundation/_login.scss */
+#login-form .login-register-field.button,
+#register-form .login-register-field.button {
   margin: 40px 0px;
 }
-/* line 86, ../sass/foundation/_login.scss */
-#login-page #login-form .login-register-field .label,
-#login-page #login-form .login-register-field .field,
-#login-page #register-form .login-register-field .label,
-#login-page #register-form .login-register-field .field {
+/* line 91, ../sass/foundation/_login.scss */
+#login-form .login-register-field .label,
+#login-form .login-register-field .field,
+#register-form .login-register-field .label,
+#register-form .login-register-field .field {
   text-align: center;
   clear: both;
   width: 100%;
   margin: 0 0 10px 0;
 }
-/* line 94, ../sass/foundation/_login.scss */
-#login-page #login-form .login-register-field .label,
-#login-page #register-form .login-register-field .label {
-  font-size: 3rem;
-}
-/* line 98, ../sass/foundation/_login.scss */
-#login-page #login-form .login-register-field .field,
-#login-page #register-form .login-register-field .field {
+/* line 99, ../sass/foundation/_login.scss */
+#login-form .login-register-field .field,
+#register-form .login-register-field .field {
   height: auto;
   text-align: center;
   clear: both;
   width: 100%;
 }
-/* line 104, ../sass/foundation/_login.scss */
-#login-page #login-form .login-register-field .field input,
-#login-page #login-form .login-register-field .field button,
-#login-page #register-form .login-register-field .field input,
-#login-page #register-form .login-register-field .field button {
-  width: 400px;
-  font-size: 2rem;
-  background-color: #FFF;
+/* line 109, ../sass/foundation/_login.scss */
+#login-form .login-register-field .field input,
+#login-form .login-register-field .field button,
+#register-form .login-register-field .field input,
+#register-form .login-register-field .field button {
   border: 2px solid #0929f3;
   margin: 2px;
 }
-/* line 113, ../sass/foundation/_login.scss */
-#login-page #login-form .login-register-field .field .cancel.btn,
-#login-page #login-form .login-register-field .field .submit.btn,
-#login-page #register-form .login-register-field .field .cancel.btn,
-#login-page #register-form .login-register-field .field .submit.btn {
-  border: 5px solid white !important;
-  font-size: 2.5em !important;
-  height: 100px;
-  width: 300px;
+/* line 118, ../sass/foundation/_login.scss */
+#login-form .login-register-field .field .cancel.btn,
+#login-form .login-register-field .field .submit.btn,
+#register-form .login-register-field .field .cancel.btn,
+#register-form .login-register-field .field .submit.btn {
+  font-size: 1.2em !important;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 /* ***** MEDIA QUERIES FOR DEVICES ***** */
 /* phone portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
-  /* line 131, ../sass/foundation/_login.scss */
+  /* line 135, ../sass/foundation/_login.scss */
   #header #loginArea {
     float: right;
     color: #0929f3 !important;
   }
-  /* line 136, ../sass/foundation/_login.scss */
+  /* line 140, ../sass/foundation/_login.scss */
   #header #login-icon {
     float: right;
     border: 0;
     width: 2rem;
     margin-right: 1rem;
   }
-  /* line 142, ../sass/foundation/_login.scss */
+  /* line 146, ../sass/foundation/_login.scss */
   #header #login-icon a {
     text-decoration: none;
     color: #0929f3;
     font-size: 3rem;
     margin-top: 3px;
   }
-  /* line 150, ../sass/foundation/_login.scss */
+  /* line 154, ../sass/foundation/_login.scss */
   #header #login-text {
     margin: 2px 6px;
   }
-  /* line 153, ../sass/foundation/_login.scss */
+  /* line 157, ../sass/foundation/_login.scss */
   #header #login-text a {
     text-decoration: none;
     font-size: 3rem;
   }
-  /* line 160, ../sass/foundation/_login.scss */
+  /* line 164, ../sass/foundation/_login.scss */
   #header .login-link span {
     color: #0929f3;
   }
@@ -1341,28 +1350,33 @@ a.fc-day-grid-event,
   }
 }
 /* desktop or tablet */
-/* line 29, ../sass/main.scss */
+/* line 30, ../sass/main.scss */
 .center-text {
   text-align: center !important;
 }
 
-/* line 33, ../sass/main.scss */
+/* line 34, ../sass/main.scss */
 .left-text {
   text-align: left !important;
 }
 
-/* line 37, ../sass/main.scss */
+/* line 38, ../sass/main.scss */
 .tiny-text {
   font-size: 12px;
 }
 
-/* line 41, ../sass/main.scss */
+/* line 42, ../sass/main.scss */
 .danger {
   color: #f00;
   border-color: #f00;
 }
 
-/* line 46, ../sass/main.scss */
+/* line 47, ../sass/main.scss */
+input:invalid {
+  border: 1px solid red;
+}
+
+/* line 51, ../sass/main.scss */
 input,
 select,
 .btn,
@@ -1373,13 +1387,13 @@ select,
   text-overflow: inherit;
 }
 
-/* line 56, ../sass/main.scss */
+/* line 61, ../sass/main.scss */
 #text_area {
   float: left;
   width: 100%;
   margin: 40px auto 0;
 }
-/* line 61, ../sass/main.scss */
+/* line 66, ../sass/main.scss */
 #text_area .title_blue {
   color: #0929f3;
   width: 100%;
@@ -1389,7 +1403,7 @@ select,
   float: left;
   vertical-align: super;
 }
-/* line 71, ../sass/main.scss */
+/* line 76, ../sass/main.scss */
 #text_area .question,
 #text_area .teacher,
 #text_area .subtitle {
@@ -1400,7 +1414,7 @@ select,
   font-family: "AvenirBook";
   line-height: 1.7em;
 }
-/* line 81, ../sass/main.scss */
+/* line 86, ../sass/main.scss */
 #text_area .question a,
 #text_area .question a:visited,
 #text_area .teacher a,
@@ -1409,26 +1423,26 @@ select,
 #text_area .subtitle a:visited {
   color: #0929f3;
 }
-/* line 86, ../sass/main.scss */
+/* line 91, ../sass/main.scss */
 #text_area .question strong,
 #text_area .teacher strong,
 #text_area .subtitle strong {
   color: #0929f3;
 }
-/* line 91, ../sass/main.scss */
+/* line 96, ../sass/main.scss */
 #text_area .question {
   padding: 0 0 40px;
 }
-/* line 95, ../sass/main.scss */
+/* line 100, ../sass/main.scss */
 #text_area .subtitle {
   float: left;
   padding: 0 0 25px;
 }
-/* line 100, ../sass/main.scss */
+/* line 105, ../sass/main.scss */
 #text_area .teacher {
   text-align: left;
 }
-/* line 103, ../sass/main.scss */
+/* line 108, ../sass/main.scss */
 #text_area .teacher img {
   width: 200px;
   clear: none;
@@ -1436,7 +1450,7 @@ select,
   padding: 5px;
 }
 
-/* line 112, ../sass/main.scss */
+/* line 117, ../sass/main.scss */
 select.error,
 textarea.error,
 input.error {
@@ -1444,11 +1458,11 @@ input.error {
   border-color: #ff0000;
 }
 
-/* line 119, ../sass/main.scss */
+/* line 124, ../sass/main.scss */
 .ui-dialog {
   font-family: "AvenirBook" !important;
 }
-/* line 122, ../sass/main.scss */
+/* line 127, ../sass/main.scss */
 .ui-dialog input[type="text"],
 .ui-dialog input[type="password"],
 .ui-dialog textarea,
@@ -1456,12 +1470,12 @@ input.error {
 .ui-dialog .ui-widget {
   width: 100%;
 }
-/* line 130, ../sass/main.scss */
+/* line 135, ../sass/main.scss */
 .ui-dialog input[type="checkbox"] {
   width: 30px;
 }
 
-/* line 135, ../sass/main.scss */
+/* line 140, ../sass/main.scss */
 #want-to-teach {
   background-color: #0929f3;
   color: #fff;
@@ -1470,7 +1484,7 @@ input.error {
   float: left;
   font-family: "AvenirBook";
 }
-/* line 143, ../sass/main.scss */
+/* line 148, ../sass/main.scss */
 #want-to-teach a,
 #want-to-teach a:visited {
   color: #fff;
@@ -1479,32 +1493,32 @@ input.error {
 /* ***** MEDIA QUERIES FOR DEVICES ***** */
 /* phone portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
-  /* line 152, ../sass/main.scss */
+  /* line 157, ../sass/main.scss */
   .desktop_div {
     display: none;
   }
 
-  /* line 156, ../sass/main.scss */
+  /* line 161, ../sass/main.scss */
   .tiny-text {
     font-size: 2.5rem;
   }
 
-  /* line 160, ../sass/main.scss */
+  /* line 165, ../sass/main.scss */
   input[type="checkbox"] {
     min-height: 40px;
     min-width: 40px;
   }
 
-  /* line 165, ../sass/main.scss */
+  /* line 170, ../sass/main.scss */
   #text_area {
     width: 86%;
     margin: 70px 7% 0;
   }
-  /* line 169, ../sass/main.scss */
+  /* line 174, ../sass/main.scss */
   #text_area .title_blue {
     font: bold 72px "AvenirBook";
   }
-  /* line 173, ../sass/main.scss */
+  /* line 178, ../sass/main.scss */
   #text_area .subtitle {
     width: 100%;
     margin: 0;
@@ -1512,7 +1526,7 @@ input.error {
     font-size: 2.3rem;
   }
 
-  /* line 181, ../sass/main.scss */
+  /* line 186, ../sass/main.scss */
   #want-to-teach {
     text-align: center;
     font-size: 3rem;
@@ -1522,7 +1536,7 @@ input.error {
 }
 /* desktop or tablet */
 @media only screen and (min-device-width: 641px) {
-  /* line 191, ../sass/main.scss */
+  /* line 196, ../sass/main.scss */
   .mobile-link,
   .mobile-span,
   .mobile_div {
@@ -1531,7 +1545,7 @@ input.error {
 }
 /* phone portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
-  /* line 200, ../sass/main.scss */
+  /* line 205, ../sass/main.scss */
   .desktop-link,
   .desktop-span,
   .desktop_div {

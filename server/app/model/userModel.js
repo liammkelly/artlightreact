@@ -20,7 +20,6 @@ UserImpl.authenticateUser = ({username,password}, result) => {
     [username, password],
     function(err, res) {
       if (err) {
-        console.log("error: ", err)
         result(null, err)
       } else {
         result(null, res)
@@ -29,14 +28,23 @@ UserImpl.authenticateUser = ({username,password}, result) => {
   )
 }
 
-UserImpl.addUser = user => {
-  sql.query("INSERT INTO User SET ?", user, function(err, res) {
+UserImpl.registerUser = (user,result) => {
+  delete user.password_confirm
+  sql.query("INSERT INTO `user` SET ?", user, function(err, res) {
     if (err) {
-      console.log("error: ", err)
       result(null, err)
     } else {
-      console.log("tasks : ", res)
       result(null, res)
+    }
+  })
+}
+
+UserImpl.validateUsername = ({username},result) => {
+  sql.query("SELECT * FROM `user` WHERE `username` = ?", [username], function(err, res) {
+    if (err) {
+      result(null, err)
+    } else {
+      result(null, res.length == 0)
     }
   })
 }

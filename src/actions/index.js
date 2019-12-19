@@ -10,9 +10,15 @@ import {
   LOGIN_START,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  REGISTER_USER_START,
+  REGISTER_USER_SUCCESS,
+  REGISTER_USER_FAILURE,
   REQUEST_CLASS_START,
   REQUEST_CLASS_SUCCESS,
-  REQUEST_CLASS_FAILURE
+  REQUEST_CLASS_FAILURE,
+  VALIDATE_USERNAME_START,
+  VALIDATE_USERNAME_SUCCESS,
+  VALIDATE_USERNAME_FAILURE
 } from "../actionTypes"
 
 export const getClasses = () => {
@@ -46,12 +52,37 @@ export const requestClass = data => {
   })
 }
 
+export const registerUser = data => {
+  return apiAction({
+    url: "/user",
+    method: "POST",
+    data: formatFormData(data),
+    onSuccess: registerUserSuccess,
+    onFailure: registerUserFailure,
+    label: REGISTER_USER_START
+  })
+}
+
+export const validateUsername = data => {
+  return apiAction({
+    url: "/validate_username",
+    method: "POST",
+    data: data,
+    onSuccess: validateUsernameSuccess,
+    onFailure: validateUsernameFailure,
+    label: VALIDATE_USERNAME_START
+  })
+}
+
+
+
 export const loginUser = data => {
   return apiAction({
     url: "/login",
     method: "POST",
     data: formatFormData(data),
     onSuccess: result => {
+      debugger
       if (!result.length) {
         return authenticationFailure()
       } else {
@@ -103,31 +134,45 @@ export function loadClassesFailure(error) {
   }
 }
 
-export function loadEventsSuccess(classes) {
+export function loadEventsSuccess(payload) {
   return {
     type: LOAD_EVENTS_SUCCESS,
-    payload: classes
+    payload
   }
 }
 
-export function loadEventsFailure(error) {
+export function loadEventsFailure(payload) {
   return {
     type: LOAD_EVENTS_FAILURE,
-    payload: error
+    payload
   }
 }
 
-export function loginSuccess(user) {
+export function loginSuccess(payload) {
   return {
     type: LOGIN_SUCCESS,
-    payload: user
+    payload
   }
 }
 
-export function loginFailure(error) {
+export function loginFailure(payload) {
   return {
     type: LOGIN_FAILURE,
-    payload: error
+    payload
+  }
+}
+
+export function registerUserSuccess(payload) {
+  return {
+    type: REGISTER_USER_SUCCESS,
+    payload
+  }
+}
+
+export function registerUserFailure(payload) {
+  return {
+    type: REGISTER_USER_FAILURE,
+    payload
   }
 }
 
@@ -140,6 +185,20 @@ export function requestClassSuccess(user) {
 export function requestClassFailure(error) {
   return {
     type: REQUEST_CLASS_FAILURE,
+    payload: error
+  }
+}
+
+export function validateUsernameSuccess(isValid) {
+  return {
+    type: VALIDATE_USERNAME_SUCCESS,
+    payload: isValid
+  }
+}
+
+export function validateUsernameFailure(error) {
+  return {
+    type: validateUsernameFailure,
     payload: error
   }
 }

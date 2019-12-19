@@ -52,74 +52,78 @@
     color: white;
     float: left;
     width: 100%;
+}
 
-    #login-form, 
-    #register-form {
-        margin: 0;
+#login-form, 
+#register-form {
+    padding: 100px 0 0;
 
-        .header {
-            width: 76%;
-            margin: 0 12% 30px;
-            font-size: 42px;
-            text-align: center;
-        }
-
-        #login-form-link,
-        #register-form-link {
-            width: 100%;
-            text-align: center;
-            color: white;
-            font-size: 36px;
-
-            a, a:visited {
-                color: white;
-            }
-        }
-
-        .login-register-field {
-            width: 100%;
-
-            &.button {
-                margin: 40px 0px;
-            }
-
-            .label,
-            .field {
-                text-align: center;
-                clear: both;
-                width: 100%;
-                margin: 0 0 10px 0;
-            }
-
-            .label {
-                font-size: 3rem;
-            }
-
-            .field {
-                height: auto;
-                text-align: center;
-                clear: both;
-                width: 100%;
-
-                input,
-                button {
-                    width: 400px;
-                    font-size: 2rem;
-                    background-color: #FFF;
-                    border: $selector-field-border-width solid $tals-blue;
-                    margin: $selector-field-border-width;
-                }
-
-                .cancel.btn,
-                .submit.btn {
-                    border: 5px solid white !important;
-                    font-size: 2.5em !important;
-                    height: 100px;
-                    width: 300px;
-                }
-            }
-        }        
+    table {
+        margin: 0 auto;
+        font-family: "AvenirBook";
     }
+
+    .header {
+        width: 76%;
+        margin: 0 12% 30px;
+        text-align: center;
+    }
+
+    #login-form-link,
+    #register-form-link {
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 36px;
+
+        a, a:visited {
+            color: white;
+        }
+    }
+
+    .login-register-field {
+        width: 100%;
+
+        &.button {
+            margin: 40px 0px;
+        }
+
+        .label,
+        .field {
+            text-align: center;
+            clear: both;
+            width: 100%;
+            margin: 0 0 10px 0;
+        }
+
+        .field {
+            height: auto;
+            text-align: center;
+            clear: both;
+            width: 100%;
+
+            input[type=text] {
+                    // width: 100%;
+            }
+
+            input,
+            button {
+                // width: 400px;
+                // font-size: 2rem;
+                // background-color: #FFF;
+                border: $selector-field-border-width solid $tals-blue;
+                margin: $selector-field-border-width;
+            }
+
+            .cancel.btn,
+            .submit.btn {
+                // border: 5px solid white !important;
+                font-size: 1.2em !important;
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+        }
+    }        
 }
 
 

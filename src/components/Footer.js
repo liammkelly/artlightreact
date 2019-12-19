@@ -1,9 +1,40 @@
 import React from "react"
 import { NavLink, BrowserRouter as Router, Switch } from "react-router-dom"
 
+import styled from "styled-components";
+
+const FooterContainer = styled.div`
+position: relative;
+margin: 0 auto;
+overflow: hidden;
+width: 70%;
+
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:start;
+  margin-left: -1px;
+  list-style-type:none
+
+  li {
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: .25em 0;
+    padding: 0 1em;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    background-color: #fff;
+
+    &.first {
+      border-left: 0px;
+    }
+  }
+}`
+
 function Footer() {
   return (
-    <div>
+    <div id="footer">
       <div id="copyright">
         <p>
           Mindfulness is not a switch we can turn on; it is a journey and an
@@ -14,26 +45,28 @@ function Footer() {
         </p>
       </div>
 
-      <div id="footer">
-            <ul>
-              <NavLink activeClassName="active" to="/">
-                <li>home</li>
-              </NavLink>
-              <NavLink activeClassName="active" to="/classes">
-                <li>classes</li>
-              </NavLink>
-              <NavLink activeClassName="active" to="/information">
-                <li>information</li>
-              </NavLink>
-              <NavLink activeClassName="active" to="/gallery">
-                <li>gallery</li>
-              </NavLink>
-              <NavLink activeClassName="active" to="/calendar">
-                <li>calendar</li>
-              </NavLink>
-            </ul>
-        <a href="mailto:artandlightsociety@gmail.com">contact us</a>
-      </div>
+      <FooterContainer>
+          <ul>
+            <NavLink activeClassName="active" to="/">
+              <li className="first">home</li>
+            </NavLink>
+            <NavLink activeClassName="active" to="/classes">
+              <li>classes</li>
+            </NavLink>
+            <NavLink activeClassName="active" to="/information">
+              <li>information</li>
+            </NavLink>
+            <NavLink activeClassName="active" to="/gallery">
+              <li>gallery</li>
+            </NavLink>
+            <NavLink activeClassName="active" to="/calendar">
+              <li>calendar</li>
+            </NavLink>
+            <NavLink to="mailto:artandlightsociety@gmail.com">
+              <li>contact us</li>
+            </NavLink>
+          </ul>
+      </FooterContainer>
     </div>
   )
 }
