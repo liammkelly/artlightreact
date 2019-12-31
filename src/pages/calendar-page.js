@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react"
+import React, { useEffect, useRef } from "react"
 import { connect } from "react-redux"
 import FullCalendar from "@fullcalendar/react"
 import dayGridPlugin from "@fullcalendar/daygrid"
@@ -50,32 +50,12 @@ const CalendarWrapper = styled.div`
     }
   `
       
-  function useHookWithRefCallback() {
-    const ref = useRef(null)
-    const setRef = useCallback(node => {
-
-      if (ref.current) {
-        // Make sure to cleanup any events/references added to the last instance
-      }
-      
-      if (node) {
-        // Check if a node is actually passed. Otherwise node would be null.
-        // You can now do what you need to, addEventListeners, measure, etc.
-      }
-      
-      // Save a reference to the node
-      ref.current = node
-    }, [])
-    
-    return [setRef]
-  }
-  
 function CalendarPage(props) {
   useEffect(prevState => {
     props.getEvents()
   }, [])
 
-  calendarComponentRef = React.createRef()
+  // calendarComponentRef = useRef(null)
 
   // const [ref] = useHookWithRefCallback()
   
@@ -97,7 +77,7 @@ function CalendarPage(props) {
             plugins={[dayGridPlugin, listPlugin]}
             weekends={true}
             events={props.events}
-            ref={calendarComponentRef}
+            // ref={calendarComponentRef}
             contentHeight="auto"
             height={518}
           />

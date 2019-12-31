@@ -3,9 +3,21 @@ import { connect } from "react-redux";
 
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components"
+
+const LoginAreaWrapper = styled.div`
+  width: 38%;
+  float: right;
+  font-family: AvenirBook;
+  margin: 5px 2% 5px 0;
+  font-size: 18px;
+  a {
+    text-decoration: none;
+  }
+`
 
 const Login = props => (
-  <div id="login-area">
+  <LoginAreaWrapper>
     <div id="login-text" style={{ float: "right" }}>
       {props.user === null ? (
         <a href="/login">join us</a>
@@ -20,7 +32,7 @@ const Login = props => (
         <FontAwesomeIcon icon={faUserCircle} />
       </a>
     </div>
-  </div>
+  </LoginAreaWrapper>
 );
 
 const mapStateToProps = state => ({

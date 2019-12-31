@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 
-function InformationPage(props) {
+const InformationPage = props => {
     return (
         <>
             <div id="wrap_video">
@@ -49,7 +49,7 @@ function InformationPage(props) {
 }
 
 const mapStateToProps = state => ({
-    user: state.user
+    user: state.auth.user
 })
 
 export default connect(mapStateToProps)(InformationPage);

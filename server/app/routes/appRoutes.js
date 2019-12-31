@@ -10,7 +10,11 @@ const routes = app => {
 
   app.route("/login").post(users.authenticate_user)
 
-  app.route("/user").post(users.register_user)
+  app.route("/user")
+    .post(users.register_user)
+    .put(users.save_user)
+
+  app.route("/refresh").post(users.refresh_token)
 
   app.route("/validate_username").post(users.validate_username)
 }

@@ -2,6 +2,7 @@ import React from "react"
 import { registerUser, validateUsername } from "../actions"
 import { connect } from "react-redux"
 import { Redirect } from "react-router-dom"
+import { checkPasswordValidity } from "../actions/helper"
 
 function RegistrationPage(props) {
   const onSubmit = e => {
@@ -15,17 +16,6 @@ function RegistrationPage(props) {
   const onUsernameBlur = e => {
     const data = { username: e.target.value }
     props.validateUsername(data)
-  }
-
-  const checkPasswordValidity = () => {
-    let password = document.getElementById("password"),
-      password_confirm = document.getElementById("password_confirm")
-
-    if (password.value !== password_confirm.value) {
-      password_confirm.setCustomValidity("Sorry, passwords don't match")
-    } else {
-      password_confirm.setCustomValidity("")
-    }
   }
 
   if (props.user != null) {

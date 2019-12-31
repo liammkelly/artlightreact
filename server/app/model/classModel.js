@@ -20,4 +20,15 @@ ClassImpl.getAllClasses = result => {
   })
 }
 
+ClassImpl.addClass = result => {
+  sql.query("INSERT INTO `class` (`name`,`sort_order`) VALUES (?,0)",[name], function(err, res) {
+    if (err) {
+      console.log("error: ", err)
+      result(null, err)
+    } else {
+      result(null, res)
+    }
+  })
+}
+
 module.exports = ClassImpl

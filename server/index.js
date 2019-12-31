@@ -1,17 +1,19 @@
-require('dotenv').config({path: __dirname + '/.env'})
+require('dotenv').config()
 
 const express = require("express"),
   app = express(),
   bodyParser = require("body-parser"),
+  cookieParser = require('cookie-parser'),
   port = process.env.PORT || 3001
 
 const mysql = require('mysql');
 
 const mc = mysql.createConnection({
-  host     : 'goaliedb.cta3qlz6tidx.us-east-1.rds.amazonaws.com',
-  user     : 'admin',
-  password : 'passw0rd',
-  database : 'goaliedb'
+  host     : process.env.DATABASE_HOST,
+  port     : process.env.DATABASE_PORT,
+  user     : process.env.DATABASE_USERNAME,
+  password : process.env.DATABASE_PASSWORD,
+  database : process.env.DATABASE_SCHEMA
 });
 
 mc.connect();
@@ -22,6 +24,7 @@ console.log('API server started on: ' + port);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 var routes = require('./app/routes/appRoutes'); //importing route
 routes(app); //register the route

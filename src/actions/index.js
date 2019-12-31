@@ -16,9 +16,12 @@ import {
   REQUEST_CLASS_START,
   REQUEST_CLASS_SUCCESS,
   REQUEST_CLASS_FAILURE,
+  SAVE_USER_START,
+  SAVE_USER_FAILURE,
+  SAVE_USER_SUCCESS,
   VALIDATE_USERNAME_START,
   VALIDATE_USERNAME_SUCCESS,
-  VALIDATE_USERNAME_FAILURE
+  SET_LOCAL_USER
 } from "../actionTypes"
 
 export const getClasses = () => {
@@ -57,9 +60,26 @@ export const registerUser = data => {
     url: "/user",
     method: "POST",
     data: formatFormData(data),
-    onSuccess: registerUserSuccess,
+    onSuccess: result => {
+      localStorage.setItem("user", JSON.stringify(result))
+      return registerUserSuccess(result)
+    },
     onFailure: registerUserFailure,
     label: REGISTER_USER_START
+  })
+}
+
+export const saveUser = data => {
+  return apiAction({
+    url: "/user",
+    method: "PUT",
+    data: formatFormData(data),
+    onSuccess: result => {
+      localStorage.setItem("user", JSON.stringify(result))
+      return saveUserSuccess(result)
+    },
+    onFailure: saveUserFailure,
+    label: SAVE_USER_START
   })
 }
 
@@ -74,20 +94,14 @@ export const validateUsername = data => {
   })
 }
 
-
-
 export const loginUser = data => {
   return apiAction({
     url: "/login",
     method: "POST",
     data: formatFormData(data),
     onSuccess: result => {
-      debugger
-      if (!result.length) {
-        return authenticationFailure()
-      } else {
-        return loginSuccess(result)
-      }
+      localStorage.setItem("user", JSON.stringify(result))
+      return loginSuccess(result)
     },
     onFailure: loginFailure,
     label: LOGIN_START
@@ -189,6 +203,20 @@ export function requestClassFailure(error) {
   }
 }
 
+export function saveUserSuccess(payload) {
+  return {
+    type: SAVE_USER_SUCCESS,
+    payload
+  }
+}
+
+export function saveUserFailure(payload) {
+  return {
+    type: SAVE_USER_FAILURE,
+    payload: payload
+  }
+}
+
 export function validateUsernameSuccess(isValid) {
   return {
     type: VALIDATE_USERNAME_SUCCESS,
@@ -207,6 +235,13 @@ export function authenticationFailure(error) {
   return {
     type: AUTHENTICATION_FAILURE,
     payload: error
+  }
+}
+
+export function setLocalUser() {
+  return {
+    type: SET_LOCAL_USER,
+    payload: JSON.parse(localStorage.getItem("user"))
   }
 }
 

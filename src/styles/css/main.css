@@ -615,25 +615,30 @@ a.fc-day-grid-event,
 
 /* line 57, ../sass/foundation/_login.scss */
 #login-form,
+#profile-form,
 #register-form {
   padding: 100px 0 0;
 }
-/* line 61, ../sass/foundation/_login.scss */
+/* line 62, ../sass/foundation/_login.scss */
 #login-form table,
+#profile-form table,
 #register-form table {
   margin: 0 auto;
   font-family: "AvenirBook";
 }
-/* line 66, ../sass/foundation/_login.scss */
+/* line 67, ../sass/foundation/_login.scss */
 #login-form .header,
+#profile-form .header,
 #register-form .header {
   width: 76%;
   margin: 0 12% 30px;
   text-align: center;
 }
-/* line 72, ../sass/foundation/_login.scss */
+/* line 73, ../sass/foundation/_login.scss */
 #login-form #login-form-link,
 #login-form #register-form-link,
+#profile-form #login-form-link,
+#profile-form #register-form-link,
 #register-form #login-form-link,
 #register-form #register-form-link {
   width: 100%;
@@ -641,29 +646,37 @@ a.fc-day-grid-event,
   color: white;
   font-size: 36px;
 }
-/* line 79, ../sass/foundation/_login.scss */
+/* line 80, ../sass/foundation/_login.scss */
 #login-form #login-form-link a, #login-form #login-form-link a:visited,
 #login-form #register-form-link a,
 #login-form #register-form-link a:visited,
+#profile-form #login-form-link a,
+#profile-form #login-form-link a:visited,
+#profile-form #register-form-link a,
+#profile-form #register-form-link a:visited,
 #register-form #login-form-link a,
 #register-form #login-form-link a:visited,
 #register-form #register-form-link a,
 #register-form #register-form-link a:visited {
   color: white;
 }
-/* line 84, ../sass/foundation/_login.scss */
+/* line 85, ../sass/foundation/_login.scss */
 #login-form .login-register-field,
+#profile-form .login-register-field,
 #register-form .login-register-field {
   width: 100%;
 }
-/* line 87, ../sass/foundation/_login.scss */
+/* line 88, ../sass/foundation/_login.scss */
 #login-form .login-register-field.button,
+#profile-form .login-register-field.button,
 #register-form .login-register-field.button {
   margin: 40px 0px;
 }
-/* line 91, ../sass/foundation/_login.scss */
+/* line 92, ../sass/foundation/_login.scss */
 #login-form .login-register-field .label,
 #login-form .login-register-field .field,
+#profile-form .login-register-field .label,
+#profile-form .login-register-field .field,
 #register-form .login-register-field .label,
 #register-form .login-register-field .field {
   text-align: center;
@@ -671,64 +684,84 @@ a.fc-day-grid-event,
   width: 100%;
   margin: 0 0 10px 0;
 }
-/* line 99, ../sass/foundation/_login.scss */
+/* line 100, ../sass/foundation/_login.scss */
 #login-form .login-register-field .field,
+#profile-form .login-register-field .field,
 #register-form .login-register-field .field {
   height: auto;
   text-align: center;
   clear: both;
   width: 100%;
 }
-/* line 109, ../sass/foundation/_login.scss */
+/* line 106, ../sass/foundation/_login.scss */
+#login-form .login-register-field .field input[type=text],
+#profile-form .login-register-field .field input[type=text],
+#register-form .login-register-field .field input[type=text] {
+  width: 100%;
+}
+/* line 110, ../sass/foundation/_login.scss */
 #login-form .login-register-field .field input,
 #login-form .login-register-field .field button,
+#profile-form .login-register-field .field input,
+#profile-form .login-register-field .field button,
 #register-form .login-register-field .field input,
 #register-form .login-register-field .field button {
   border: 2px solid #0929f3;
   margin: 2px;
 }
-/* line 118, ../sass/foundation/_login.scss */
+/* line 119, ../sass/foundation/_login.scss */
+#login-form .login-register-field .field .logout.btn,
 #login-form .login-register-field .field .cancel.btn,
 #login-form .login-register-field .field .submit.btn,
+#profile-form .login-register-field .field .logout.btn,
+#profile-form .login-register-field .field .cancel.btn,
+#profile-form .login-register-field .field .submit.btn,
+#register-form .login-register-field .field .logout.btn,
 #register-form .login-register-field .field .cancel.btn,
 #register-form .login-register-field .field .submit.btn {
   font-size: 1.2em !important;
   padding: 5px 10px;
   cursor: pointer;
 }
+/* line 128, ../sass/foundation/_login.scss */
+#login-form .login-register-field .field .logout.btn,
+#profile-form .login-register-field .field .logout.btn,
+#register-form .login-register-field .field .logout.btn {
+  border: 2px solid red;
+}
 
 /* ***** MEDIA QUERIES FOR DEVICES ***** */
 /* phone portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
-  /* line 135, ../sass/foundation/_login.scss */
+  /* line 141, ../sass/foundation/_login.scss */
   #header #loginArea {
     float: right;
     color: #0929f3 !important;
   }
-  /* line 140, ../sass/foundation/_login.scss */
+  /* line 146, ../sass/foundation/_login.scss */
   #header #login-icon {
     float: right;
     border: 0;
     width: 2rem;
     margin-right: 1rem;
   }
-  /* line 146, ../sass/foundation/_login.scss */
+  /* line 152, ../sass/foundation/_login.scss */
   #header #login-icon a {
     text-decoration: none;
     color: #0929f3;
     font-size: 3rem;
     margin-top: 3px;
   }
-  /* line 154, ../sass/foundation/_login.scss */
+  /* line 160, ../sass/foundation/_login.scss */
   #header #login-text {
     margin: 2px 6px;
   }
-  /* line 157, ../sass/foundation/_login.scss */
+  /* line 163, ../sass/foundation/_login.scss */
   #header #login-text a {
     text-decoration: none;
     font-size: 3rem;
   }
-  /* line 164, ../sass/foundation/_login.scss */
+  /* line 170, ../sass/foundation/_login.scss */
   #header .login-link span {
     color: #0929f3;
   }

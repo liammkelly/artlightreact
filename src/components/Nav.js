@@ -23,6 +23,8 @@ const Navigation = styled.div`
       justify-content: start;
       margin-left: -1px;
       list-style-type: none;
+      margin: 5px 0;
+      padding: 0 0 0 20px;
     }
     li {
       margin: 0.25em 0;
@@ -38,12 +40,10 @@ const Navigation = styled.div`
     a {
       font-size: 1em;
       text-decoration: none;
-      .active {
-        color: tomato;
+      color: black;
+      &.active {
+        color: #0929f3;
       }
-    }
-    a.active {
-      color: #222;
     }
   }
 
@@ -57,6 +57,12 @@ const Navigation = styled.div`
     position: relative;
 
     nav {
+      display: block;
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 0;
+
       .fa-bars {
         display: inline-block;
         position: absolute;
@@ -83,6 +89,7 @@ const Navigation = styled.div`
         transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 
         &.is-expanded {
+          background-color: #0929f3;
           overflow: hidden;
           max-height: 500px; /* approximate max height */
           -moz-transition-duration: 0.4s;
@@ -93,6 +100,7 @@ const Navigation = styled.div`
           -webkit-transition-timing-function: ease-in;
           -o-transition-timing-function: ease-in;
           transition-timing-function: ease-in;
+          margin: 0px !important;
         }
         li {
           padding: 15px 10px;
@@ -107,6 +115,10 @@ const Navigation = styled.div`
 const Nav = props => {
   const [isExpanded, setIsExpanded] = useState(false)
 
+  const handleLinkClick = e => {
+    setIsExpanded(!isExpanded)
+  }
+
   const handleToggle = e => {
     e.preventDefault()
     setIsExpanded(!isExpanded)
@@ -118,10 +130,10 @@ const Nav = props => {
         <i
           className="fa fa-bars"
           aria-hidden="true"
-          onClick={e => handleToggle(e)}
+          onClick={handleToggle}
         />
-        <ul className={`collapsed ${isExpanded ? "is-expanded" : ""}`}>
-          <NavLink activeClassName="active" to="/">
+        <ul onClick={handleLinkClick} className={`collapsed ${isExpanded ? "is-expanded" : ""}`}>
+          <NavLink activeClassName="active" exact to="/">
             <li className="first">home</li>
           </NavLink>
           <NavLink activeClassName="active" to="/classes">

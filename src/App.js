@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom"
 import { connect } from "react-redux"
 
-import { getClasses } from "./actions"
+import { getClasses, setLocalUser } from "./actions"
 
 import Header from "./components/Header"
 import Selector from "./components/Selector"
@@ -14,14 +14,29 @@ import InformationPage from "./pages/information-page"
 import CalendarPage from "./pages/calendar-page"
 import LoginPage from "./pages/login-page"
 import RegistrationPage from "./pages/registration-page"
+import ProfilePage from "./pages/profile-page"
+import AddClassPage from "./pages/admin/add-class-page"
+import EventListPage from "./pages/admin/event-list-page"
+import ScheduleEventPage from "./pages/admin/schedule-event-page"
+import AdminMenuPage from "./pages/admin/menu-page"
 
 const App = props => {
+  if (!props.user && localStorage.user) {
+    props.setLocalUser()
+  }
+
   useEffect(() => {
     props.getClasses()
   }, [])
 
   return (
     <Router>
+      <Switch>
+        <Route exact path="/admin" component={AdminMenuPage} />
+        <Route path="/admin/add-class" component={AddClassPage} />
+        <Route path="/admin/event-list" component={EventListPage} />
+        <Route path="/admin/schedule-event" component={ScheduleEventPage} />
+      </Switch>
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -30,6 +45,7 @@ const App = props => {
         <Route path="/calendar" component={CalendarPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegistrationPage} />
+        <Route path="/profile" component={ProfilePage} />
       </Switch>
       <Selector />
       <Footer />
@@ -44,8 +60,15 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    getClasses: () => dispatch(getClasses())
+    getClasses: () => dispatch(getClasses()),
+    setLocalUser: () => dispatch(setLocalUser())
   }
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(App)
+
+export const Counter = ({ counter }) => (
+  <span>
+    <p>{counter}</p>
+  </span>
+);

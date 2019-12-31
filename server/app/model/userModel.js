@@ -2,6 +2,7 @@
 var sql = require("./db.js")
 
 let UserImpl = user => {
+  this.user_id = user.user_id
   this.username = user.username
   this.password = user.password
   this.email = user.email
@@ -14,8 +15,8 @@ let UserImpl = user => {
   this.photo_permission = user.photo_permission
 }
 
-UserImpl.authenticateUser = ({username,password}, result) => {
-    sql.query(
+UserImpl.authenticateUser = ({ username, password }, result) => {
+  sql.query(
     "select * from `user` where `username`=? and `password`=?",
     [username, password],
     function(err, res) {
@@ -28,7 +29,18 @@ UserImpl.authenticateUser = ({username,password}, result) => {
   )
 }
 
-UserImpl.registerUser = (user,result) => {
+UserImpl.findByUsername = username => {
+  sql.query(
+    "select `user_id`,`username`,`email`,`firstname`,`lastname`,`phone`,`is_admin`,`photo_permission` from `user` where `username`=?", 
+    [username], 
+    function(err, res) {
+      console.log("result =",res)
+      return err ? err : res[0]
+    }
+  )
+}
+
+UserImpl.registerUser = (user, result) => {
   delete user.password_confirm
   sql.query("INSERT INTO `user` SET ?", user, function(err, res) {
     if (err) {
@@ -39,8 +51,33 @@ UserImpl.registerUser = (user,result) => {
   })
 }
 
-UserImpl.validateUsername = ({username},result) => {
-  sql.query("SELECT * FROM `user` WHERE `username` = ?", [username], function(err, res) {
+UserImpl.saveUser = (user, result) => {
+  sql.query(
+    "UPDATE `user` SET `email` = ?, `firstname` = ?, `lastname` = ?, `phone` = ?, `photo_permission` = ?, `password` = ? WHERE `id` = ? ",
+    [
+      user.email,
+      user.firstname,
+      user.lastname,
+      user.phone,
+      user.photo_permission,
+      user.password,
+      user.user_id
+    ],
+    function(err, res) {
+      if (err) {
+        result(null, err)
+      } else {
+        result(null, res)
+      }
+    }
+  )
+}
+
+UserImpl.validateUsername = ({ username }, result) => {
+  sql.query("SELECT * FROM `user` WHERE `username` = ?", [username], function(
+    err,
+    res
+  ) {
     if (err) {
       result(null, err)
     } else {

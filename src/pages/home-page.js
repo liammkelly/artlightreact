@@ -24,7 +24,7 @@ function HomePage(props) {
                     what fills your cup?
                 </div>
 
-                <div clasclassNames="subtitle desktop_div">
+                <div className="subtitle desktop_div">
                     <p>Our mission is to help you live in the moment.</p>
                     <p>We think people forget to do that sometimes.</p>
                     <p>We imagine small groups bonding in <a href="/classes">classes</a> that combine the arts and mindfulness.</p>
