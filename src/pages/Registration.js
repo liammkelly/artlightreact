@@ -1,20 +1,20 @@
 import React from "react"
-import { registerUser, validateUsername } from "../actions"
+import { registerUser, validateUsername } from "../actions/auth"
 import { connect } from "react-redux"
 import { Redirect } from "react-router-dom"
 import { checkPasswordValidity } from "../actions/helper"
 
 function RegistrationPage(props) {
-  const onSubmit = e => {
-    e.preventDefault()
-    if (!props.isUsernameInvalid && e.target.reportValidity()) {
-      const data = new FormData(e.target)
+  const onSubmit = evt => {
+    evt.preventDefault()
+    if (!props.isUsernameInvalid && evt.target.reportValidity()) {
+      const data = new FormData(evt.target)
       props.registerUser(data)
     }
   }
 
-  const onUsernameBlur = e => {
-    const data = { username: e.target.value }
+  const onUsernameBlur = evt => {
+    const data = { username: evt.target.value }
     props.validateUsername(data)
   }
 
@@ -93,7 +93,7 @@ function RegistrationPage(props) {
                   name="photo_permission"
                   id="photo_permission"
                 />
-                <span class="tiny-text">
+                <span className="tiny-text">
                   Yes, I grant permission to use my likeness or that of my child
                   in promotional materials.
                 </span>
@@ -101,20 +101,20 @@ function RegistrationPage(props) {
             </td>
           </tr>
         </table>
-        <div class="login-register-field button">
-          <div class="label"></div>
-          <div class="field">
-            <button class="submit btn" id="registerSubmit">
+        <div className="login-register-field button">
+          <div className="label"></div>
+          <div className="field">
+            <button className="submit btn">
               Register
             </button>
             {props.isUsernameInvalid != null && props.isUsernameInvalid && (
-              <div class="danger">
+              <div className="danger">
                 The username you have entered is invalid, please update.
               </div>
             )}
             {
               props.didRegisterFail && 
-              <div class="danger">
+              <div className="danger">
                 Sorry, registration was not successful.  <a href="mailto:artandlightsociety@gmail.com">Contact us</a> for assistance.
               </div>
             }

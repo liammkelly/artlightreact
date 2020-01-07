@@ -2,6 +2,7 @@ import {
   AUTHENTICATION_FAILURE,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  LOGOUT_USER,
   REGISTER_USER_FAILURE,
   REGISTER_USER_SUCCESS,
   SET_LOCAL_USER,
@@ -23,6 +24,8 @@ const authReducer = (state = initState, action) => {
       return Object.assign({}, state, { didLoginFail: true, user: null })
     case LOGIN_SUCCESS:
       return Object.assign({}, state, { didLoginFail: false, user: action.payload })
+    case LOGOUT_USER:
+      return Object.assign({}, state, { user: null })
     case REGISTER_USER_FAILURE:
       return Object.assign({}, state, { didRegisterFail: true })
     case REGISTER_USER_SUCCESS:

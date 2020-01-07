@@ -8,10 +8,10 @@ const mapDispatchToProps = { addNewClass }
 const ConnectedClassForm = props => {
   const [title, setTitle] = useState("")
 
-  const handleChange = event => setTitle(event.target.value)
+  const handleChange = evt => setTitle(evt.target.value)
 
-  const handleSubmit = event => {
-    event.preventDefault()
+  const handleSubmit = evt => {
+    evt.preventDefault()
     props.addNewClass({ title })
     setTitle("")
   }

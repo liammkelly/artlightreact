@@ -1,21 +1,28 @@
 import React from "react"
-import { saveUser, validateUsername } from "../actions"
+import { logoutUser, saveUser, validateUsername } from "../actions/auth"
 import { connect } from "react-redux"
 import { checkPasswordValidity } from "../actions/helper"
 import { Redirect } from "react-router-dom"
 
 function ProfilePage(props) {
-  const onSubmit = e => {
-    e.preventDefault()
-    if (!props.isUsernameInvalid && e.target.reportValidity()) {
-      const data = new FormData(e.target)
+  const onSubmit = evt => {
+    evt.preventDefault()
+    if (!props.isUsernameInvalid && evt.target.reportValidity()) {
+      const data = new FormData(evt.target)
       props.saveUser(data)
     }
   }
 
-  const onUsernameBlur = e => {
-    const data = { username: e.target.value }
+  const onUsernameBlur = evt => {
+    const data = { username: evt.target.value }
     props.validateUsername(data)
+  }
+
+  const logoutUser = evt => {
+    evt.preventDefault()
+    debugger
+    localStorage.removeItem("tals-user")
+    props.logoutUser()
   }
 
   if (props.user == null) {
@@ -24,6 +31,7 @@ function ProfilePage(props) {
     return (
       <form id="profile-form" onSubmit={onSubmit}>
         <table>
+          <tbody>
           <tr>
             <td>Username:</td>
             <td>
@@ -32,9 +40,9 @@ function ProfilePage(props) {
                 required
                 name="username"
                 id="username"
-                maxlength="14"
+                maxLength="14"
                 onBlur={onUsernameBlur}
-                value={props.user.username}
+                defaultValue={props.user.username}
                 pattern="[A-Za-z0-9]*"
                 title="Username should only contain letters and numbers"
               />
@@ -48,7 +56,7 @@ function ProfilePage(props) {
                 type="text"
                 name="firstname"
                 id="firstname"
-                value={props.user.firstname}
+                defaultValue={props.user.firstname}
               />
             </td>
           </tr>
@@ -59,7 +67,7 @@ function ProfilePage(props) {
                 type="text"
                 name="lastname"
                 id="lastname"
-                value={props.user.lastname}
+                defaultValue={props.user.lastname}
               />
             </td>
           </tr>
@@ -70,7 +78,7 @@ function ProfilePage(props) {
                 type="email"
                 name="email"
                 id="email"
-                value={props.user.email}
+                defaultValue={props.user.email}
               />
             </td>
           </tr>
@@ -81,7 +89,7 @@ function ProfilePage(props) {
                 type="text"
                 name="phone"
                 id="phone"
-                value={props.user.phone}
+                defaultValue={props.user.phone}
               />
             </td>
           </tr>
@@ -108,26 +116,28 @@ function ProfilePage(props) {
             </td>
           </tr>
           <tr>
-            <td colspan="2">
+            <td colSpan="2">
               <div>
                 <input
                   type="checkbox"
                   name="photo_permission"
                   id="photo_permission"
-                  checked={props.user.photo_permission}
+                  defaultChecked={props.user.photo_permission}
                 />
-                <span class="tiny-text">
+                <span className="tiny-text">
                   Yes, I grant permission to use my likeness or that of my child
                   in promotional materials.
                 </span>
               </div>
             </td>
           </tr>
+          </tbody>
         </table>
-        <div class="login-register-field button">
-          <div class="label"></div>
-          <div class="field">
-            <button class="submit btn">Save</button> <button class="logout btn">Log Out</button>
+        <div className="login-register-field button">
+          <div className="label"></div>
+          <div className="field">
+            <button className="submit btn">Save</button> 
+            <button className="logout btn" onClick={logoutUser}>Log Out</button>
           </div>
         </div>
         }
@@ -142,6 +152,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
+    logoutUser: () => dispatch(logoutUser()),
     saveUser: data => dispatch(saveUser(data)),
     validateUsername: data => dispatch(validateUsername(data))
   }

@@ -1,5 +1,5 @@
 import React from "react"
-import { NavLink, BrowserRouter as Router, Switch } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 import styled from "styled-components";
 
@@ -23,7 +23,7 @@ ul {
     margin: .25em 0;
     padding: 0 1em;
     text-align: center;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid black;
     background-color: #fff;
 
     &.first {

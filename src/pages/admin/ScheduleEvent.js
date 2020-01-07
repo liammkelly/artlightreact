@@ -32,11 +32,11 @@ const ConnectedForm = props => {
     setEventDate("")
   }
 
-  const handleChange = event => {
-    if (event.target.id == "duration") {
-      setDuration(event.target.value)
+  const handleChange = evt => {
+    if (evt.target.id === "duration") {
+      setDuration(evt.target.value)
     } else {
-      setClassId(event.target.value)
+      setClassId(evt.target.value)
     }
   }
 
@@ -44,8 +44,8 @@ const ConnectedForm = props => {
     setEventDate(moment.toDate())
   }
 
-  const handleSubmit = event => {
-    event.preventDefault()
+  const handleSubmit = evt => {
+    evt.preventDefault()
     const datetime = moment(eventDate).format("YYYY-MM-DD HH:mm")
     props.scheduleEvent({ classId, duration, datetime })
     resetVals()

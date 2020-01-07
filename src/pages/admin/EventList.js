@@ -23,10 +23,10 @@ const ConnectedEventList = props => {
     props.loadEvents()
   }, [])
 
-  const confirmDelete = event => {
-    event.preventDefault()
+  const confirmDelete = evt => {
+    evt.preventDefault()
 
-    let selectedId = event.target.dataset.id
+    let selectedId = evt.target.dataset.id
     let deleteRow = () => {
       props.deleteClassEvent(selectedId)
     }

@@ -15,3 +15,11 @@ exports.list_all_classes = (req, res) => {
     res.send(cls)
   })
 }
+
+exports.request_class = (req, res) => {
+  Class.requestClass(req.body, (err,cls) => {
+    if (err) res.send(err)
+    res.send(cls)
+  })
+}
+

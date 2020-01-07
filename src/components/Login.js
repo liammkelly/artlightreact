@@ -9,16 +9,23 @@ const LoginAreaWrapper = styled.div`
   width: 38%;
   float: right;
   font-family: AvenirBook;
-  margin: 5px 2% 5px 0;
+  margin: 9px 2% 10px 0;
   font-size: 18px;
   a {
+    color: black;
     text-decoration: none;
+  }
+
+  #login-icon,
+  #login-text {
+    float: right;
+    margin-left: 6px;
   }
 `
 
 const Login = props => (
   <LoginAreaWrapper>
-    <div id="login-text" style={{ float: "right" }}>
+    <div id="login-text">
       {props.user === null ? (
         <a href="/login">join us</a>
       ) : props.user.is_admin === 1 ? (
@@ -27,7 +34,7 @@ const Login = props => (
         <a href="/profile">{props.user.username}</a>
       )}
     </div>
-    <div id="login-icon" style={{ float: "right" }}>
+    <div id="login-icon">
       <a href={props.user === null ? "/login" : "/user"} id="login-menu-toggle" className="login-link" data-login="0">
         <FontAwesomeIcon icon={faUserCircle} />
       </a>

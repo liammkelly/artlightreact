@@ -28,10 +28,11 @@ const Navigation = styled.div`
     }
     li {
       margin: 0.25em 0;
-      border-left: 1px solid #ccc;
+      border-left: 2px solid black;
       padding: 0 1em;
       justify-content: space-between;
       font-size: 1em;
+      line-height: 0.9em;
 
       &.first {
         border-left: 0px;
@@ -115,12 +116,12 @@ const Navigation = styled.div`
 const Nav = props => {
   const [isExpanded, setIsExpanded] = useState(false)
 
-  const handleLinkClick = e => {
+  const handleLinkClick = () => {
     setIsExpanded(!isExpanded)
   }
 
-  const handleToggle = e => {
-    e.preventDefault()
+  const handleToggle = evt => {
+    evt.preventDefault()
     setIsExpanded(!isExpanded)
   }
 
